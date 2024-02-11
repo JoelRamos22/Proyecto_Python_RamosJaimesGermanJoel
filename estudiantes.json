@@ -1,0 +1,408 @@
+[
+    {
+        "estudiantesCursados": [
+            {
+                "identificacion": "123456789",
+                "nombres": "Julio Cesar",
+                "apellidos": "Gutierrez Rojas",
+                "direccion": "Carrera 123",
+                "acudiente": "Martha Rojas",
+                "telefonos": {
+                    "celular": "3201234567",
+                    "fijo": "1234567"
+                },
+                "estado": "Aprobado"
+            },
+            {
+                "identificacion": "987654321",
+                "nombres": "Andrea",
+                "apellidos": "Sanchez Rios",
+                "direccion": "Calle 987",
+                "acudiente": "Carlos Rios",
+                "telefonos": {
+                    "celular": "3109876543",
+                    "fijo": "7654321"
+                },
+                "estado": "Cursando"
+            },
+            {
+                "identificacion": "456789012",
+                "nombres": "Diego Alejandro",
+                "apellidos": "Rodriguez Martinez",
+                "direccion": "Avenida 456",
+                "acudiente": "Ana Martinez",
+                "telefonos": {
+                    "celular": "3154567890",
+                    "fijo": "8901234"
+                },
+                "estado": "Expulsado"
+            },
+            {
+                "identificacion": "135792468",
+                "nombres": "Laura Vanessa",
+                "apellidos": "Lopez Gonzalez",
+                "direccion": "Calle 135",
+                "acudiente": "Juan Gonzalez",
+                "telefonos": {
+                    "celular": "3002468135",
+                    "fijo": "7894561"
+                },
+                "estado": "Retirado"
+            },
+            {
+                "identificacion": "246801357",
+                "nombres": "Carlos Alberto",
+                "apellidos": "Diaz Ramirez",
+                "direccion": "Carrera 246",
+                "acudiente": "Laura Ramirez",
+                "telefonos": {
+                    "celular": "3025791368",
+                    "fijo": "1357924"
+                },
+                "estado": "Graduado"
+            },
+            {
+                "identificacion": "369258147",
+                "nombres": "Sofia",
+                "apellidos": "Hernandez Rodriguez",
+                "direccion": "Avenida 369",
+                "acudiente": "Pedro Rodriguez",
+                "telefonos": {
+                    "celular": "3047852963",
+                    "fijo": "1478523"
+                },
+                "estado": "Aprobado"
+            },
+            {
+                "identificacion": "582631479",
+                "nombres": "Luisa Fernanda",
+                "apellidos": "Gomez Diaz",
+                "direccion": "Calle 582",
+                "acudiente": "Luz Diaz",
+                "telefonos": {
+                    "celular": "3116248597",
+                    "fijo": "6314798"
+                },
+                "estado": "Cursando"
+            },
+            {
+                "identificacion": "794613852",
+                "nombres": "David Alejandro",
+                "apellidos": "Martinez Garcia",
+                "direccion": "Carrera 794",
+                "acudiente": "Carlos Garcia",
+                "telefonos": {
+                    "celular": "3139754612",
+                    "fijo": "8521476"
+                },
+                "estado": "Expulsado"
+            },
+            {
+                "identificacion": "123987456",
+                "nombres": "Maria Camila",
+                "apellidos": "Perez Hernandez",
+                "direccion": "Avenida 123",
+                "acudiente": "Laura Hernandez",
+                "telefonos": {
+                    "celular": "3196847531",
+                    "fijo": "9876543"
+                },
+                "estado": "Retirado"
+            },
+            {
+                "identificacion": "456123789",
+                "nombres": "Juan Manuel",
+                "apellidos": "Gutierrez Gomez",
+                "direccion": "Calle 456",
+                "acudiente": "Pedro Gomez",
+                "telefonos": {
+                    "celular": "3168749231",
+                    "fijo": "1239876"
+                },
+                "estado": "Graduado"
+            },
+            {
+                "identificacion": "789456321",
+                "nombres": "Carolina",
+                "apellidos": "Ramirez Lopez",
+                "direccion": "Carrera 789",
+                "acudiente": "Maria Lopez",
+                "telefonos": {
+                    "celular": "3185962478",
+                    "fijo": "4563217"
+                },
+                "estado": "Aprobado"
+            },
+            {
+                "identificacion": "951357456",
+                "nombres": "Daniel",
+                "apellidos": "Hernandez Castro",
+                "direccion": "Avenida 951",
+                "acudiente": "Juan Castro",
+                "telefonos": {
+                    "celular": "3147859632",
+                    "fijo": "3579514"
+                },
+                "estado": "Cursando"
+            },
+            {
+                "identificacion": "741852963",
+                "nombres": "Valentina",
+                "apellidos": "Lopez Ramirez",
+                "direccion": "Calle 741",
+                "acudiente": "Ana Ramirez",
+                "telefonos": {
+                    "celular": "3178451236",
+                    "fijo": "7418529"
+                },
+                "estado": "Expulsado"
+            },
+            {
+                "identificacion": "258369147",
+                "nombres": "Jose Daniel",
+                "apellidos": "Perez Gomez",
+                "direccion": "Avenida 258",
+                "acudiente": "Carlos Perez",
+                "telefonos": {
+                    "celular": "3125897463",
+                    "fijo": "3691478"
+                },
+                "estado": "Retirado"
+            },
+            {
+                "identificacion": "852369147",
+                "nombres": "Mariana",
+                "apellidos": "Ramirez Rodriguez",
+                "direccion": "Carrera 852",
+                "acudiente": "Maria Rodriguez",
+                "telefonos": {
+                    "celular": "3169854723",
+                    "fijo": "3698521"
+                },
+                "estado": "Graduado"
+            }
+        ]
+    },
+    {
+        "estudiantesInscritos": [
+            {
+                "identificacion": "123456789",
+                "nombres": "Juan Carlos",
+                "apellidos": "Perez Gomez",
+                "direccion": "Calle 123",
+                "acudiente": "Mar\u00c3\u00ada Perez",
+                "telefonos": {
+                    "celular": "3211234567",
+                    "fijo": "1234567"
+                },
+                "estado": "Inscrito",
+                "Prueba": 20
+            },
+            {
+                "identificacion": "987654321",
+                "nombres": "Mar\u00c3\u00ada Alejandra",
+                "apellidos": "Gomez Rodriguez",
+                "direccion": "Carrera 456",
+                "acudiente": "Carlos Gomez",
+                "telefonos": {
+                    "celular": "3109876543",
+                    "fijo": "7654321"
+                },
+                "estado": " Aprobado  ",
+                "Prueba": 70
+            },
+            {
+                "identificacion": "456789012",
+                "nombres": "Pedro Luis",
+                "apellidos": "Lopez Martinez",
+                "direccion": "Avenida 789",
+                "acudiente": "Ana Lopez",
+                "telefonos": {
+                    "celular": "3154567890",
+                    "fijo": "8901234"
+                },
+                "estado": "Inscrito",
+                "Prueba": 29
+            },
+            {
+                "identificacion": "135792468",
+                "nombres": "Luisa Fernanda",
+                "apellidos": "Garcia Herrera",
+                "direccion": "Calle 789",
+                "acudiente": "Juan Garcia",
+                "telefonos": {
+                    "celular": "3002468135",
+                    "fijo": "7894561"
+                },
+                "estado": "Inscrito",
+                "Prueba": 3
+            },
+            {
+                "identificacion": "246801357",
+                "nombres": "Andres Felipe",
+                "apellidos": "Rodriguez Diaz",
+                "direccion": "Carrera 246",
+                "acudiente": "Laura Diaz",
+                "telefonos": {
+                    "celular": "3025791368",
+                    "fijo": "1357924"
+                },
+                "estado": " Aprobado  ",
+                "Prueba": 3
+            },
+            {
+                "identificacion": "369258147",
+                "nombres": "Camila",
+                "apellidos": "Sanchez Ramirez",
+                "direccion": "Avenida 147",
+                "acudiente": "Pedro Ramirez",
+                "telefonos": {
+                    "celular": "3047852963",
+                    "fijo": "1478523"
+                },
+                "estado": "Inscrito",
+                "Prueba": 3
+            },
+            {
+                "identificacion": "582631479",
+                "nombres": "Daniel",
+                "apellidos": "Castro Gomez",
+                "direccion": "Calle 631",
+                "acudiente": "Luz Gomez",
+                "telefonos": {
+                    "celular": "3116248597",
+                    "fijo": "6314798"
+                },
+                "estado": "Inscrito",
+                "Prueba": 3
+            },
+            {
+                "identificacion": "794613852",
+                "nombres": "Valentina",
+                "apellidos": "Martinez Lopez",
+                "direccion": "Carrera 852",
+                "acudiente": "Carlos Martinez",
+                "telefonos": {
+                    "celular": "3139754612",
+                    "fijo": "8521476"
+                },
+                "estado": " Aprobado  ",
+                "Prueba": 78
+            },
+            {
+                "identificacion": "123987456",
+                "nombres": "Juan Pablo",
+                "apellidos": "Diaz Hernandez",
+                "direccion": "Avenida 987",
+                "acudiente": "Laura Hernandez",
+                "telefonos": {
+                    "celular": "3196847531",
+                    "fijo": "9876543"
+                },
+                "estado": "Inscrito",
+                "Prueba": 4
+            },
+            {
+                "identificacion": "456123789",
+                "nombres": "Laura",
+                "apellidos": "Gutierrez Castro",
+                "direccion": "Calle 123",
+                "acudiente": "Pedro Castro",
+                "telefonos": {
+                    "celular": "3168749231",
+                    "fijo": "1239876"
+                },
+                "estado": "Inscrito",
+                "Prueba": 4
+            },
+            {
+                "identificacion": "789456321",
+                "nombres": "Diego",
+                "apellidos": "Perez Ramirez",
+                "direccion": "Carrera 456",
+                "acudiente": "Maria Ramirez",
+                "telefonos": {
+                    "celular": "3185962478",
+                    "fijo": "4563217"
+                },
+                "estado": "Inscrito",
+                "Prueba": 4
+            },
+            {
+                "identificacion": "951357456",
+                "nombres": "Carolina",
+                "apellidos": "Hernandez Gomez",
+                "direccion": "Avenida 357",
+                "acudiente": "Juan Gomez",
+                "telefonos": {
+                    "celular": "3147859632",
+                    "fijo": "3579514"
+                },
+                "estado": "Inscrito",
+                "Prueba": 4
+            },
+            {
+                "identificacion": "741852963",
+                "nombres": "Santiago",
+                "apellidos": "Lopez Hernandez",
+                "direccion": "Calle 741",
+                "acudiente": "Ana Hernandez",
+                "telefonos": {
+                    "celular": "3178451236",
+                    "fijo": "7418529"
+                },
+                "estado": "Inscrito",
+                "Prueba": 4
+            },
+            {
+                "identificacion": "258369147",
+                "nombres": "Mariana",
+                "apellidos": "Gomez Perez",
+                "direccion": "Avenida 369",
+                "acudiente": "Carlos Perez",
+                "telefonos": {
+                    "celular": "3125897463",
+                    "fijo": "3691478"
+                },
+                "estado": "Inscrito",
+                "Prueba": 4
+            },
+            {
+                "identificacion": "852369147",
+                "nombres": "Mateo",
+                "apellidos": "Ramirez Rodriguez",
+                "direccion": "Avenida 369",
+                "acudiente": "Maria Rodriguez",
+                "telefonos": {
+                    "celular": "3169854723",
+                    "fijo": "3698521"
+                },
+                "estado": "Inscrito",
+                "Prueba": 4
+            },
+            {
+                "identificacion": "joel",
+                "nombres": "ramos",
+                "apellidos": "ramos",
+                "direccion": "31w",
+                "acudiente": "sandra",
+                "telefonos": {
+                    "celular": "3178192801",
+                    "fijo": "8192801"
+                },
+                "Prueba": 4
+            },
+            {
+                "identificacion": "189232",
+                "nombres": "juanito",
+                "apellidos": "alima\u00f1a",
+                "direccion": "carrera 6",
+                "acudiente": "cha",
+                "telefonos": {
+                    "celular": "21389023",
+                    "fijo": "23892"
+                }
+            }
+        ]
+    }
+]
