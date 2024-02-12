@@ -1,22 +1,22 @@
 [
     {
-        "identificacion": "10025923",
+        "identificacion": 10025923,
         "nombre": "Francisco",
-        "apellidos": "Velez ni\u00c3\u00b1o",
+        "apellidos": "Velez niño",
         "Especialidad": "JavaScript",
         "horario": "diurno",
         "Celular": "318201924"
     },
     {
-        "identificacion": "10025923",
+        "identificacion": 10025923,
         "nombre": "Juan",
-        "apellidos": "mari\u00c3\u00b1o",
+        "apellidos": "mariño",
         "Especialidad": "NodeJS ",
         "horario": "Nocturno",
         "Celular": "322019252"
     },
     {
-        "identificacion": "1201221",
+        "identificacion": 1201221,
         "nombre": "camilo",
         "apellidos": "tarazone",
         "Especialidad": "java",
@@ -24,7 +24,7 @@
         "Celular": "317282893"
     },
     {
-        "identificacion": "190293",
+        "identificacion": 190293,
         "nombre": "pedro",
         "apellidos": "jaramillo",
         "Especialidad": "html",

@@ -2,7 +2,6 @@ import menus
 import coordinador
 
 while True: 
-    try : 
         opc = menus.Menu_Principal() 
         if opc == 1 : 
             opc_Coordinador = menus.Menu_Coordinador() 
@@ -16,7 +15,3 @@ while True:
             print (" saliendo...")
             print ("")
             break
-    except Exception : 
-        print ("\n Error, ingrese un numero entero ")
-        print ("")
-        continue

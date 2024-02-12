@@ -68,12 +68,26 @@ def Coordinador_Opciones(opcion):
             Rutas(opciones)
             break 
         elif opcion == 5:
+            print ("")
+            print(" ========================================= ")
+            print("|                                        |")
+            print("|  Bienvenido a la opción de             |")
+            print("|                 Matriculas             |")
+            print("|                                        |")
+            print(" ========================================= ")
+            print("") 
             Matriculas()
+            break
         elif opcion == 6:
             print ("")
             print(" Saliendo... ")
             print ("")
-            break 
+            break
+        else  : 
+            print ("\n Error, ingrese una opcion valida ")
+            print ("")
+            continue
+        
 
 def Lista_Participantes():
     print("Entrando a la lista de Estudiantes Inscritos:")
@@ -328,7 +342,7 @@ def Rutas(opcion):
                 print ("")
                 print (" ==============================================")
                 print ("")
-                print (" Ingrese el nombre de la nueva Ruta" )
+                print ("       Ingrese el nombre de la nueva Ruta"      )
                 print ("")
                 print (" ==============================================")
                 print ("")
@@ -354,7 +368,7 @@ def Rutas(opcion):
         with open('estudiantes.json','r') as estudiantes_File : 
             data_estudiantes = json.load(estudiantes_File) 
         print("")
-        print("Bienvenido a la opcion para Asignar Rutas")
+        print("  Bienvenido a la opcion para Asignar Rutas ")
         print ("")
         print("==============================================")
         print("")
@@ -387,7 +401,7 @@ def Rutas(opcion):
                 print ("==============================")
                 print ("")
                 for ruta in data_rutas : 
-                    for key, value in ruta.items() : 
+                    for key, values in ruta.items() : 
                         print (f" Ruta: {key} ")
                         print ("")
                 estudiante_Id=(int(input("(Identificacion del estudiante:) ")))
@@ -462,4 +476,84 @@ def Rutas(opcion):
     elif opcion == 4 : 
         print ("")
         print ("saliendo...")
+    return
+
+def Matriculas() :
+    with open('estudiantes.json','r') as estudiantes_File : 
+        data_estudiantes = json.load(estudiantes_File) 
+    with open('rutas.json','r') as rutas_File : 
+        data_rutas = json.load(rutas_File)
+    with open('Trainers.json','r') as trainers_File :  
+        data_trainers = json.load(trainers_File)
+    with open('salones.json','r') as salones_File : 
+        data_salones = json.load(salones_File)
+    print ("")
+    respuesta = input (" ¿ Desea crear un nuevo grupo ? : ")
+    print ("")
+    while True : 
+        if respuesta.lower() == "si" :
+            print ("") 
+            print (" =================================== ")
+            print ("")
+            print (" | Ingrese el nombre del grupo  :   |")
+            print ("")
+            print (" =================================== ") 
+            print ("")
+            nuevo_grupo = {
+                "nombre" : input("Nombre del grupo : ") 
+                
+            }
+            print ("")
+            print (" TRAINERS DISPONIBLES : " )
+            num_trainers = len(data_trainers)
+            trainer_Por_pagina = 2
+            num_paginas = (num_trainers // trainer_Por_pagina) + 1
+            pagina_actual = 0 
+    
+            while pagina_actual < num_paginas:
+                print(f"Página {pagina_actual + 1}/{num_paginas}:")
+                print("╔════════════════════════════════════╗")
+                print("║         LISTA DE TRAINERS          ║")
+                print("╠════════════════════════════════════╣")
+                for trainer in data_trainers[pagina_actual * trainer_Por_pagina:(pagina_actual + 1) * trainer_Por_pagina]:
+                    print("║ Nombre:", trainer["nombre"])
+                    print("║ Apellidos:", trainer["apellidos"])
+                    print("║ Identificación:", trainer["identificacion"])
+                    print("║ Especialidad", trainer["Especialidad"])
+                    print("║ Celular:", trainer["Celular"])
+                    print("╠════════════════════════════════════╣")
+
+                if pagina_actual == num_paginas - 1:
+                    respuesta = input(" Presione Enter para continuar o escriba 'salir' para regresar al menú anterior: ").lower()
+                if respuesta.lower() == 'salir':
+                    print ("")
+                    print (" =================================================================== ")
+                    print ("")
+                    break
+                else:
+                        input(" Presione Enter para continuar... ")
+                pagina_actual += 1
+            TrainerP = (int(input(" Ingrese la identificacion del trainer que sera el encargado del grupo : ")))
+            for trainer in data_trainers : 
+                if trainer["identificacion"] == TrainerP : 
+                    nuevo_grupo["trainer"] = trainer
+                    print ("")
+                    print (" =================================== ")
+                    print ("")
+                    print ("        TRAINER ENCONTRADO           ")
+                    print ("")
+                    print (" =================================== ")
+                    break
+                else :  
+                    print ("")
+                    print (" =================================== ")
+                    print ("")
+                    print ("        Buscando Trainer             ")
+                    print ("")
+                    print (" =================================== ") 
+        elif respuesta.lower() == "no" :
+            print ("")
+            print (" Volviendo al menu... ")
+            print ("")
+            break
     return

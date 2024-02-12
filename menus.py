@@ -54,15 +54,3 @@ def Menu_Estudiantes() :
     print("║ 3. Consultar Mi Estado             ║")
     print("║ 4. Salir                           ║")
     print("╚════════════════════════════════════╝")
-
-def Matriculas() : 
-    
-    print("╔════════════════════════════════════╗")
-    print("║            MATRICULAS              ║")
-    print(" ═══════════════════════════════════")
-    print("║ 1. Registrar Matriculas            ║")
-    print("║ 2. Consultar Matriculas            ║")
-    print("║ 3. Salir                           ║")
-    print(" ════════════════════════════════════")
-    
-
