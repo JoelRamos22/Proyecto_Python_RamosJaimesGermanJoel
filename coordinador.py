@@ -68,9 +68,11 @@ def Coordinador_Opciones(opcion):
             Rutas(opciones)
             break 
         elif opcion == 5:
-            VerRutas()
+            Matriculas()
         elif opcion == 6:
-            print("\nSaliendo...")
+            print ("")
+            print(" Saliendo... ")
+            print ("")
             break 
 
 def Lista_Participantes():
@@ -345,7 +347,6 @@ def Rutas(opcion):
                 print ("")
                 print (" Volviendo al menu...")
                 break
-        return
 
     elif opcion == 2:
         with open('Rutas.json', 'r') as rutas_File:
@@ -428,7 +429,6 @@ def Rutas(opcion):
                 print (" Volviendo al menu... ")
                 print ("")
                 break
-        return
     
     elif opcion == 3 :          
         with open ('Rutas.json','r') as rutas_file : 
@@ -459,4 +459,7 @@ def Rutas(opcion):
                         print ("")
                         print ("=========================================================")
                         break
-        return
+    elif opcion == 4 : 
+        print ("")
+        print ("saliendo...")
+    return

@@ -5,7 +5,7 @@ def Menu_Principal():
     print("║ 1. Coordinador                     ║")
     print("║ 2. Trainer                         ║")
     print("║ 3. Camper                          ║")
-    print("║ 5. Salir                           ║")
+    print("║ 4. Salir                           ║")
     print("╚════════════════════════════════════╝")
     
     print ("")
@@ -23,7 +23,7 @@ def Menu_Coordinador ():
     print("║ 1. Listas Campers/Trainers         ║")
     print("║ 2. Registrar Campers/Trainers      ║")
     print("║ 3. Asignar Notas                   ║")
-    print("║ 4. Crear Rutas                     ║")
+    print("║ 4. Rutas                           ║")
     print("║ 5. Matriculas                      ║")
     print("║ 6. Salir del Sistema               ║")
     print("╚════════════════════════════════════╝")

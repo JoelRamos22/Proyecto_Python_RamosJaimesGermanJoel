@@ -11,15 +11,11 @@ while True:
             menus.Menu_Trainer()
         elif opc == 3 : 
             menus.Menu_Estudiantes()
-        elif opc == 4 : 
-            menus.Matriculas()
-        if opc == 5 : 
-            print ("\n saliendo...")
-            break 
-        else : 
-            print ("\n Ingrese una opcion valida ")
+        if opc == 4 : 
             print ("")
-            continue  
+            print (" saliendo...")
+            print ("")
+            break
     except Exception : 
         print ("\n Error, ingrese un numero entero ")
         print ("")
