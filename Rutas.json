@@ -1,17 +1,83 @@
 [
     {
-        "NodeJs" : {
-
-        }
+        "Netcore": [
+            {
+                "identificacion": 1,
+                "nombres": "p",
+                "apellidos": "i",
+                "direccion": "8",
+                "acudiente": "o",
+                "telefonos": {
+                    "celular": "9",
+                    "fijo": "4"
+                },
+                "Prueba": 80,
+                "estado": "Aprobado"
+            }
+        ]
     },
     {
-        "Java" : {
-
-        }
+        "Java": [
+            {
+                "identificacion": 456789012,
+                "nombres": "Pedro Luis",
+                "apellidos": "Lopez Martinez",
+                "direccion": "Avenida 789",
+                "acudiente": "Ana Lopez",
+                "telefonos": {
+                    "celular": "3154567890",
+                    "fijo": "8901234"
+                },
+                "estado": "Aprobado",
+                "Prueba": 80
+            }
+        ]
     },
     {
-        "NetCore" : {
-            
-        }
+        "NodeJs": [
+            {
+                "identificacion": 1,
+                "nombres": "p",
+                "apellidos": "i",
+                "direccion": "8",
+                "acudiente": "o",
+                "telefonos": {
+                    "celular": "9",
+                    "fijo": "4"
+                },
+                "Prueba": 80,
+                "estado": "Aprobado"
+            }
+        ]
+    },
+    {
+        "python": [
+            {
+                "identificacion": 1,
+                "nombres": "p",
+                "apellidos": "i",
+                "direccion": "8",
+                "acudiente": "o",
+                "telefonos": {
+                    "celular": "9",
+                    "fijo": "4"
+                },
+                "Prueba": 80,
+                "estado": "Aprobado"
+            },
+            {
+                "identificacion": 1,
+                "nombres": "p",
+                "apellidos": "i",
+                "direccion": "8",
+                "acudiente": "o",
+                "telefonos": {
+                    "celular": "9",
+                    "fijo": "4"
+                },
+                "Prueba": 80,
+                "estado": "Aprobado"
+            }
+        ]
     }
 ]

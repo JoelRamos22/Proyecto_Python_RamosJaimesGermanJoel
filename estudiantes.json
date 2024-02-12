@@ -186,21 +186,21 @@
     {
         "estudiantesInscritos": [
             {
-                "identificacion": "123456789",
+                "identificacion": 123456789,
                 "nombres": "Juan Carlos",
                 "apellidos": "Perez Gomez",
                 "direccion": "Calle 123",
-                "acudiente": "Mar\u00c3\u00ada Perez",
+                "acudiente": "Mara Perez",
                 "telefonos": {
                     "celular": "3211234567",
                     "fijo": "1234567"
                 },
-                "estado": "Inscrito",
-                "Prueba": 20
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "987654321",
-                "nombres": "Mar\u00c3\u00ada Alejandra",
+                "identificacion": 987654321,
+                "nombres": "Mara Alejandra",
                 "apellidos": "Gomez Rodriguez",
                 "direccion": "Carrera 456",
                 "acudiente": "Carlos Gomez",
@@ -208,11 +208,11 @@
                     "celular": "3109876543",
                     "fijo": "7654321"
                 },
-                "estado": " Aprobado  ",
-                "Prueba": 70
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "456789012",
+                "identificacion": 456789012,
                 "nombres": "Pedro Luis",
                 "apellidos": "Lopez Martinez",
                 "direccion": "Avenida 789",
@@ -221,11 +221,11 @@
                     "celular": "3154567890",
                     "fijo": "8901234"
                 },
-                "estado": "Inscrito",
-                "Prueba": 29
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "135792468",
+                "identificacion": 135792468,
                 "nombres": "Luisa Fernanda",
                 "apellidos": "Garcia Herrera",
                 "direccion": "Calle 789",
@@ -234,11 +234,11 @@
                     "celular": "3002468135",
                     "fijo": "7894561"
                 },
-                "estado": "Inscrito",
-                "Prueba": 3
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "246801357",
+                "identificacion": 246801357,
                 "nombres": "Andres Felipe",
                 "apellidos": "Rodriguez Diaz",
                 "direccion": "Carrera 246",
@@ -247,11 +247,11 @@
                     "celular": "3025791368",
                     "fijo": "1357924"
                 },
-                "estado": " Aprobado  ",
-                "Prueba": 3
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "369258147",
+                "identificacion": 369258147,
                 "nombres": "Camila",
                 "apellidos": "Sanchez Ramirez",
                 "direccion": "Avenida 147",
@@ -260,11 +260,11 @@
                     "celular": "3047852963",
                     "fijo": "1478523"
                 },
-                "estado": "Inscrito",
-                "Prueba": 3
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "582631479",
+                "identificacion": 582631479,
                 "nombres": "Daniel",
                 "apellidos": "Castro Gomez",
                 "direccion": "Calle 631",
@@ -273,11 +273,11 @@
                     "celular": "3116248597",
                     "fijo": "6314798"
                 },
-                "estado": "Inscrito",
-                "Prueba": 3
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "794613852",
+                "identificacion": 794613852,
                 "nombres": "Valentina",
                 "apellidos": "Martinez Lopez",
                 "direccion": "Carrera 852",
@@ -286,11 +286,11 @@
                     "celular": "3139754612",
                     "fijo": "8521476"
                 },
-                "estado": " Aprobado  ",
-                "Prueba": 78
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "123987456",
+                "identificacion": 123987456,
                 "nombres": "Juan Pablo",
                 "apellidos": "Diaz Hernandez",
                 "direccion": "Avenida 987",
@@ -299,11 +299,11 @@
                     "celular": "3196847531",
                     "fijo": "9876543"
                 },
-                "estado": "Inscrito",
-                "Prueba": 4
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "456123789",
+                "identificacion": 456123789,
                 "nombres": "Laura",
                 "apellidos": "Gutierrez Castro",
                 "direccion": "Calle 123",
@@ -312,11 +312,11 @@
                     "celular": "3168749231",
                     "fijo": "1239876"
                 },
-                "estado": "Inscrito",
-                "Prueba": 4
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "789456321",
+                "identificacion": 789456321,
                 "nombres": "Diego",
                 "apellidos": "Perez Ramirez",
                 "direccion": "Carrera 456",
@@ -325,11 +325,11 @@
                     "celular": "3185962478",
                     "fijo": "4563217"
                 },
-                "estado": "Inscrito",
-                "Prueba": 4
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "951357456",
+                "identificacion": 951357456,
                 "nombres": "Carolina",
                 "apellidos": "Hernandez Gomez",
                 "direccion": "Avenida 357",
@@ -338,11 +338,11 @@
                     "celular": "3147859632",
                     "fijo": "3579514"
                 },
-                "estado": "Inscrito",
-                "Prueba": 4
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "741852963",
+                "identificacion": 741852963,
                 "nombres": "Santiago",
                 "apellidos": "Lopez Hernandez",
                 "direccion": "Calle 741",
@@ -351,11 +351,11 @@
                     "celular": "3178451236",
                     "fijo": "7418529"
                 },
-                "estado": "Inscrito",
-                "Prueba": 4
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "258369147",
+                "identificacion": 258369147,
                 "nombres": "Mariana",
                 "apellidos": "Gomez Perez",
                 "direccion": "Avenida 369",
@@ -364,11 +364,11 @@
                     "celular": "3125897463",
                     "fijo": "3691478"
                 },
-                "estado": "Inscrito",
-                "Prueba": 4
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "852369147",
+                "identificacion": 852369147,
                 "nombres": "Mateo",
                 "apellidos": "Ramirez Rodriguez",
                 "direccion": "Avenida 369",
@@ -377,11 +377,11 @@
                     "celular": "3169854723",
                     "fijo": "3698521"
                 },
-                "estado": "Inscrito",
-                "Prueba": 4
+                "estado": "Aprobado",
+                "Prueba": 80
             },
             {
-                "identificacion": "joel",
+                "identificacion": 19283,
                 "nombres": "ramos",
                 "apellidos": "ramos",
                 "direccion": "31w",
@@ -390,10 +390,11 @@
                     "celular": "3178192801",
                     "fijo": "8192801"
                 },
-                "Prueba": 4
+                "Prueba": 80,
+                "estado": "Aprobado"
             },
             {
-                "identificacion": "189232",
+                "identificacion": 189232,
                 "nombres": "juanito",
                 "apellidos": "alima\u00f1a",
                 "direccion": "carrera 6",
@@ -401,7 +402,22 @@
                 "telefonos": {
                     "celular": "21389023",
                     "fijo": "23892"
-                }
+                },
+                "Prueba": 80,
+                "estado": "Aprobado"
+            },
+            {
+                "identificacion": 1,
+                "nombres": "p",
+                "apellidos": "i",
+                "direccion": "8",
+                "acudiente": "o",
+                "telefonos": {
+                    "celular": "9",
+                    "fijo": "4"
+                },
+                "Prueba": 80,
+                "estado": "Aprobado"
             }
         ]
     }

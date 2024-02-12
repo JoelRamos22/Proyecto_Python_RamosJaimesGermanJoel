@@ -17,7 +17,7 @@ def Coordinador_Opciones(opcion):
             elif listado.lower() == "campers": 
                 Lista_Participantes()
                 break
-        elif opcion == 2:
+        elif opcion == 3:
             print(" ========================================= ")
             print("|                                        |")
             print("|  Bienvenido a la opción para asignar   |")
@@ -27,7 +27,7 @@ def Coordinador_Opciones(opcion):
             print("") 
             AsignarPruebasN()
             break 
-        elif opcion == 3:
+        elif opcion == 2:
             print (" Que desea Registrar : ")
             print ("")
             respuestas = input ( " Trainer / Camper : ")
@@ -53,9 +53,22 @@ def Coordinador_Opciones(opcion):
                 Registrar_Estudiantes()
                 break
         elif opcion == 4:
-            Registrar_Notas()
+            print("  ╔════════════════════════════════════╗  ")
+            print("  ║            MENÚ RUTAS              ║  ")
+            print("  ╠════════════════════════════════════╣  ")
+            print("  ║ 1. Crear Rutas                     ║  ")
+            print("  ║ 2. Asignar Rutas                   ║  ")
+            print("  ║ 3. Ver Rutas                       ║  ")
+            print("  ║ 4. Salir                           ║  ")
+            print("  ╚════════════════════════════════════╝  ")
+            print("") 
+            opciones = int(input( " Ingrese la opcion que Desea usar : "))
+            print ("")
+            print (" ================================================== ")
+            Rutas(opciones)
+            break 
         elif opcion == 5:
-            Añadir_Rutas()
+            VerRutas()
         elif opcion == 6:
             print("\nSaliendo...")
             break 
@@ -204,7 +217,7 @@ def AsignarPruebasN():
         if prueba > 60 : 
             print ("")
             print (" El estudiante ha pasado la prueba de registro ")
-            estudiante['estado'] = " Aprobado  "
+            estudiante['estado'] = "Aprobado"
             
     with open('estudiantes.json', 'w') as estudiantes_file: 
         json.dump(estudiantes_data, estudiantes_file, indent=4)
@@ -231,7 +244,7 @@ def Registrar_Estudiantes() :
             print (" ==============================================")
             print ("")
             Estudiante = {
-                'identificacion' : input("identificacion : "),
+                'identificacion' : (int(input("identificacion : "))),
                 'nombres' : input("nombres : "),
                 'apellidos' : input("apellidos : "),
                 'direccion' : input("direccion : "),
@@ -294,4 +307,156 @@ def Registrar_Trainers():
             print (" Volviendo al menu...")
             break  
     return
+def Rutas(opcion): 
+    if opcion == 1 : 
+        with open ('Rutas.json', 'r') as rutas_file : 
+            data_rutas = json.load(rutas_file) 
+        print(" ========================================= ")
+        print("|                                        |")
+        print("|  Bienvenido a la opción para Crear     |")
+        print("|                 Rutas                  |")
+        print("|                                        |")
+        print(" ========================================= ")
+        print("") 
+        print (" ¿ Desea añadir una nueva Ruta ? ")
+        print ("")
+        while True : 
+            respuesta = input ( " si o no : ")
+            if respuesta.lower() == "si" : 
+                print ("")
+                print (" ==============================================")
+                print ("")
+                print (" Ingrese el nombre de la nueva Ruta" )
+                print ("")
+                print (" ==============================================")
+                print ("")
+                nombre = input()
+                nueva_ruta = {
+                    nombre : []
+                }
+                data_rutas.append(nueva_ruta)
+                print ("")
+                print ("  NUEVA AÑADIDA EXITO  ")
+                print ("")
+                print (" ====================================== ")
+                with open ('Rutas.json', 'w') as rutas_file :
+                    json.dump(data_rutas, rutas_file, indent=4)
+            elif respuesta.lower() == "no": 
+                print ("")
+                print (" Volviendo al menu...")
+                break
+        return
 
+    elif opcion == 2:
+        with open('Rutas.json', 'r') as rutas_File:
+            data_rutas = json.load(rutas_File)
+        with open('estudiantes.json','r') as estudiantes_File : 
+            data_estudiantes = json.load(estudiantes_File) 
+        print("")
+        print("Bienvenido a la opcion para Asignar Rutas")
+        print ("")
+        print("==============================================")
+        print("")
+        while True:
+            print("") 
+            print(" ¿ Desea añadir un estudiante ? ")
+            print("") 
+            respuesta = input(" si o no: ")
+            print ("")
+            if respuesta.lower() == "si":
+                print(" Estudiantes disponibles : ")
+                print ("")
+                for estudiante in data_estudiantes[1]['estudiantesInscritos']:
+                    if estudiante["estado"] == "Aprobado": 
+                        print ("")
+                        print("║ Nombre:", estudiante["nombres"])
+                        print("║ Apellidos:", estudiante["apellidos"])
+                        print("║ Identificación:", estudiante["identificacion"])
+                        print("║ Dirección:", estudiante["direccion"])
+                        print("║ Acudiente:", estudiante["acudiente"])
+                        print("║ Teléfonos:")
+                        print("║    Celular:", estudiante["telefonos"]["celular"])
+                        print("║    Fijo:", estudiante["telefonos"]["fijo"])
+                        print("║ Estado:", estudiante["estado"])
+                        print ("")
+                print ("==============================")
+                print ("")
+                print (" Las rutas disponibles son : ")
+                print ("")
+                print ("==============================")
+                print ("")
+                for ruta in data_rutas : 
+                    for key, value in ruta.items() : 
+                        print (f" Ruta: {key} ")
+                        print ("")
+                estudiante_Id=(int(input("(Identificacion del estudiante:) ")))
+                print ("")
+                ruta_Name = input("¿ En qué ruta desea añadir el estudiante ? : ").strip()
+                ruta_Encontrada = False 
+                for ruta in data_rutas:
+                    if ruta_Name in ruta :
+                        print ("===========================")
+                        print ("")
+                        print (" Ruta encontrada ")
+                        print ("")
+                        print ("===========================")
+                        ruta_Encontrada = True
+                        for estudiantes in data_estudiantes[1]['estudiantesInscritos']:
+                            if estudiantes['identificacion'] == estudiante_Id: 
+                                print ("")
+                                print (" Estudiante encontrado ")
+                                print ("")
+                                print ("===========================")
+                                ruta[ruta_Name].append(estudiantes)
+                                print ("")
+                                print (" Estudiante añadido a la ruta ")
+                                print ("")
+                                print ("===========================")
+                                with open ('Rutas.json', 'w') as rutas_file :
+                                    json.dump(data_rutas, rutas_file, indent=4)
+                                break
+                            else : 
+                                print ("")
+                                print (" Buscando Estudiante ")
+                                print ("")
+                                print ("===========================")
+                        if ruta_Encontrada == False :
+                            print ("")
+                            print (" Ruta no encontrada ")
+            elif respuesta.lower() == "no": 
+                print ("")
+                print (" Volviendo al menu... ")
+                print ("")
+                break
+        return
+    
+    elif opcion == 3 :          
+        with open ('Rutas.json','r') as rutas_file : 
+            data_rutas = json.load(rutas_file) 
+        
+        for ruta in data_rutas:
+            for nombre_ruta, estudiantes in ruta.items():
+                print(f"Ruta: {nombre_ruta}")
+                if not estudiantes:
+                    print ("")
+                    print("No hay estudiantes asignados a esta ruta.")
+                    print ("")
+                    print ("==========================================")
+                else:
+                    print("Estudiantes asignados a esta ruta:")
+                    print ("")
+                    for estudiante in estudiantes:
+                        print(f"  - Nombre: {estudiante['nombres']}")
+                        print(f"    Apellidos: {estudiante['apellidos']}")
+                        print(f"    Identificación: {estudiante['identificacion']}")
+                        print(f"    Dirección: {estudiante['direccion']}")
+                        print(f"    Acudiente: {estudiante['acudiente']}")
+                        print(f"    Teléfonos:")
+                        print(f"      Celular: {estudiante['telefonos']['celular']}")
+                        print(f"      Fijo: {estudiante['telefonos']['fijo']}")
+                        print(f"    Estado: {estudiante['estado']}")
+                        print(f"    Prueba: {estudiante['Prueba']}")
+                        print ("")
+                        print ("=========================================================")
+                        break
+        return
