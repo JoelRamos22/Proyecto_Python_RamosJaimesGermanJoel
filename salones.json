@@ -2,7 +2,9 @@
     {
         "nombre": "sputnik",
         "capacidad": 33,
-        "grupos": []
+        "grupos": [
+            
+        ]
     },
     {
         "nombre": "Artemis",

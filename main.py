@@ -10,7 +10,7 @@ while True:
             menus.Menu_Trainer()
         elif opc == 3 : 
             menus.Menu_Estudiantes()
-        if opc == 4 : 
+        elif opc == 4 : 
             print ("")
             print (" saliendo...")
             print ("")

@@ -1,6 +1,6 @@
 import json
 import time 
-def Coordinador_Opciones(opcion):
+def Coordinador_Opciones(opcion):   
     while True:
         if opcion == 1:
             print(" ============================== ")
@@ -305,7 +305,7 @@ def Registrar_Trainers():
                 "nombre" : input ( " Nombres : "),
                 "apellidos" : input (" Apellidos :  "),
                 "Especialidad" : input ( " Especialidad : "),
-                "horario" : input (" Horario : (Diurno, Matutino, Nocturno) : "),
+                "horario" : input (" Horario : (diurno, matutino, nocturno) : "),
                 "Celular" : input ( " Celular : ")
             }
             data_trainers.append(nuevo_Trainer)
@@ -404,9 +404,11 @@ def Rutas(opcion):
                     for key, values in ruta.items() : 
                         print (f" Ruta: {key} ")
                         print ("")
-                estudiante_Id=(int(input("(Identificacion del estudiante:) ")))
                 print ("")
                 ruta_Name = input("¿ En qué ruta desea añadir el estudiante ? : ").strip()
+                print ("")
+                estudiante_Id=(int(input("(Identificacion del estudiante:) ")))
+                print ("")
                 ruta_Encontrada = False 
                 for ruta in data_rutas:
                     if ruta_Name in ruta :
@@ -477,7 +479,6 @@ def Rutas(opcion):
         print ("")
         print ("saliendo...")
     return
-
 def Matriculas() :
     with open('estudiantes.json','r') as estudiantes_File : 
         data_estudiantes = json.load(estudiantes_File) 
@@ -504,8 +505,11 @@ def Matriculas() :
             print ("")
             nuevo_grupo = {
                 "nombre" : input(" Nombre del grupo : "), 
-                "horario" : input (" Horario del grupo (Diurno, Matutino, Nocturno) : "),
+                "horario" : input (" Horario del grupo (diurno, matutino, nocturno) : "),
+                "Inicio" : input(" Fecha de inicio de estudios grupo formato --/--/-- : "), 
+                "Final" : input (" Final de los estudios del grupo formato --/--/-- : "),
                 "estudiantes" : []
+                
             }
             print ("")
             print (nuevo_grupo)
@@ -544,9 +548,11 @@ def Matriculas() :
                 else:
                     input(" Presione Enter para continuar... ")
                 pagina_actual += 1
+                
             TrainerP = (int(input(" Ingrese la identificacion del trainer que sera el encargado del grupo : ")))
+            validacion = False
             for trainer in data_trainers : 
-                if trainer["identificacion"] == TrainerP and trainer["horario"] == nuevo_grupo["horario"]: 
+                if trainer["identificacion"] == TrainerP and trainer["horario"] == nuevo_grupo['horario']: 
                     nuevo_grupo["trainer"] = trainer
                     print ("")
                     print (" =================================== ")
@@ -554,15 +560,16 @@ def Matriculas() :
                     print ("        TRAINER ENCONTRADO           ")
                     print ("")
                     print (" =================================== ")
+                    validacion = True
                     break
-                else : 
+            if(validacion == False): 
                     print ("")
                     print (" =================================== ")
                     print ("")
                     print ("        TRAINER NO DISPONIBLE         ")
                     print ("")
                     print (" =================================== ")
-                    return 
+                    return
             imprimir_Estudiantes = True
             if imprimir_Estudiantes == True :
                 num_estudiantes = len(data_estudiantes[1]["estudiantesInscritos"])
@@ -586,7 +593,7 @@ def Matriculas() :
                         print("║ Estado:", estudiante["estado"])
                         print("╠════════════════════════════════════╣")
                     if pagina_actual == 3:
-                        respuesta = input(" Presione Enter para continuar o escriba 'salir' para regresar al menú anterior: ").lower()
+                        respuesta = input(" Presione Enter para continuar : ").lower()
                         print ("")
                         if respuesta.lower() == 'salir':
                             print ("")
@@ -608,6 +615,7 @@ def Matriculas() :
             print ("")
             print (" ============================================== ")
             print ("")
+            capacidad_salon = 33 
             while True: 
                 respuesta1 = input (" si o no : ")
                 print ("")
@@ -616,6 +624,7 @@ def Matriculas() :
                     for estudiante in data_estudiantes[1]["estudiantesInscritos"]: 
                         if Estudiante_Id == estudiante['identificacion'] and estudiante['estado'] == "Aprobado" :
                             nuevo_grupo['estudiantes'].append(estudiante)
+                            capacidad_salon = capacidad_salon - 1 
                             print ("")
                             print (" =================================== ")
                             print ("")
@@ -623,8 +632,20 @@ def Matriculas() :
                             print ("")
                             print (" =================================== ")
                             print ("")
+                            print (f" Capacidad actualizada del salon actualizada : {capacidad_salon}")
+                            print ("")
                             print (" ¿ Desea añadir otro estudiante ? ")
                             print ("")
+                            print (" =================================== ")
+                            if capacidad_salon == 0 : 
+                                print ("")
+                                print (" ===================================== ")
+                                print ("")
+                                print ("      CAPACIDAD DEL SALON EXCEDIDA     ")
+                                print ("")
+                                print (" ===================================== ")
+                                print ("")
+                                break
                 if respuesta1 == "no": 
                             break
             print ("")
