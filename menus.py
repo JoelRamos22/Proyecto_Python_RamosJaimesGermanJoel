@@ -44,6 +44,13 @@ def Menu_Trainer ():
     print("║ 2. Asignar Notas                   ║")
     print("║ 3. Salir                           ║")
     print("╚════════════════════════════════════╝")
+    print ("")
+    print ("=====================================")
+    opc = int(input("\n Ingrese la opcion que desea usar : "))
+    print ("")
+    print ("===================================== ")
+    print ("")
+    return opc 
     
 def Menu_Estudiantes() : 
     print("╔════════════════════════════════════╗")

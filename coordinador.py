@@ -504,17 +504,16 @@ def Matriculas() :
             print (" =================================== ") 
             print ("")
             nuevo_grupo = {
-                "nombre" : input(" Nombre del grupo : "), 
-                "horario" : input (" Horario del grupo (diurno, matutino, nocturno) : "),
-                "Inicio" : input(" Fecha de inicio de estudios grupo formato --/--/-- : "), 
-                "Final" : input (" Final de los estudios del grupo formato --/--/-- : "),
+                "nombre" : input("\n Nombre del grupo : "), 
+                "horario" : input ("\n Horario del grupo (diurno, matutino, nocturno) : "),
+                "Inicio" : input("\n Fecha de inicio de estudios grupo formato --/--/-- : "), 
+                "Final" : input ("\n Final de los estudios del grupo formato --/--/-- : "),
                 "estudiantes" : []
                 
             }
             print ("")
-            print (nuevo_grupo)
-            print ("")
             print (" TRAINERS DISPONIBLES : " )
+            print ("")
             num_trainers = len(data_trainers)
             trainer_Por_pagina = 2
             num_paginas = (num_trainers // trainer_Por_pagina) + 1
@@ -597,12 +596,8 @@ def Matriculas() :
                         print ("")
                         if respuesta.lower() == 'salir':
                             print ("")
-                            print (" =================================================================== ")
-                            print ("")
                             break
                         else : 
-                            print ("")
-                            print (" =================================================================== ")
                             print ("")
                     else:
                         print ("")
@@ -671,7 +666,7 @@ def Matriculas() :
                     print ("")
                     print (" =================================== ")
                     print ("")
-                    print ( " NUEVO GRUPO AÑADIDO ")
+                    print ( "       NUEVO GRUPO AÑADIDO    ")
                     break
         elif respuesta.lower() == "no" :
             print ("")
