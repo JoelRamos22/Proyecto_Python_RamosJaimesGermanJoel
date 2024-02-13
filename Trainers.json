@@ -2,15 +2,15 @@
     {
         "identificacion": 10025923,
         "nombre": "Francisco",
-        "apellidos": "Velez niño",
+        "apellidos": "Velez ni\u00c3\u00b1o",
         "Especialidad": "JavaScript",
-        "horario": "diurno",
+        "horario": "Nocturno",
         "Celular": "318201924"
     },
     {
         "identificacion": 10025923,
         "nombre": "Juan",
-        "apellidos": "mariño",
+        "apellidos": "mari\u00c3\u00b1o",
         "Especialidad": "NodeJS ",
         "horario": "Nocturno",
         "Celular": "322019252"
@@ -20,7 +20,7 @@
         "nombre": "camilo",
         "apellidos": "tarazone",
         "Especialidad": "java",
-        "horario": "tarde",
+        "horario": "Diurno",
         "Celular": "317282893"
     },
     {
@@ -28,7 +28,15 @@
         "nombre": "pedro",
         "apellidos": "jaramillo",
         "Especialidad": "html",
-        "horario": "mixto",
+        "horario": "Matutino",
         "Celular": "3128483092"
+    },
+    {
+        "identificacion": 1,
+        "nombre": "pepe",
+        "apellidos": "ete",
+        "Especialidad": "sech",
+        "horario": "Diurno",
+        "Celular": "1929203"
     }
 ]

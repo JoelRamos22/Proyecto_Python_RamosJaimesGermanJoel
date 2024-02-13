@@ -301,11 +301,11 @@ def Registrar_Trainers():
         print ("")
         if respuesta.lower() == "si" : 
             nuevo_Trainer = {
-                "identificacion" : input (" Identificacion : "),
+                "identificacion" : int(input (" Identificacion : ")),
                 "nombre" : input ( " Nombres : "),
                 "apellidos" : input (" Apellidos :  "),
                 "Especialidad" : input ( " Especialidad : "),
-                "horario" : input (" Horario : "),
+                "horario" : input (" Horario : (Diurno, Matutino, Nocturno) : "),
                 "Celular" : input ( " Celular : ")
             }
             data_trainers.append(nuevo_Trainer)
@@ -487,10 +487,13 @@ def Matriculas() :
         data_trainers = json.load(trainers_File)
     with open('salones.json','r') as salones_File : 
         data_salones = json.load(salones_File)
-    print ("")
-    respuesta = input (" ¿ Desea crear un nuevo grupo ? : ")
-    print ("")
     while True : 
+        print ("")
+        print (" ====================================")
+        print ("")
+        respuesta = input (" ¿ Desea crear un nuevo grupo ? : ")
+        print ("")
+        print (" ====================================")
         if respuesta.lower() == "si" :
             print ("") 
             print (" =================================== ")
@@ -500,9 +503,12 @@ def Matriculas() :
             print (" =================================== ") 
             print ("")
             nuevo_grupo = {
-                "nombre" : input("Nombre del grupo : ") 
-                
+                "nombre" : input(" Nombre del grupo : "), 
+                "horario" : input (" Horario del grupo (Diurno, Matutino, Nocturno) : "),
+                "estudiantes" : []
             }
+            print ("")
+            print (nuevo_grupo)
             print ("")
             print (" TRAINERS DISPONIBLES : " )
             num_trainers = len(data_trainers)
@@ -519,23 +525,28 @@ def Matriculas() :
                     print("║ Nombre:", trainer["nombre"])
                     print("║ Apellidos:", trainer["apellidos"])
                     print("║ Identificación:", trainer["identificacion"])
-                    print("║ Especialidad", trainer["Especialidad"])
+                    print("║ Especialidad:", trainer["Especialidad"])
+                    print("║ Horario:", trainer["horario"])
                     print("║ Celular:", trainer["Celular"])
                     print("╠════════════════════════════════════╣")
 
                 if pagina_actual == num_paginas - 1:
-                    respuesta = input(" Presione Enter para continuar o escriba 'salir' para regresar al menú anterior: ").lower()
-                if respuesta.lower() == 'salir':
-                    print ("")
-                    print (" =================================================================== ")
-                    print ("")
-                    break
+                    respuesta = input(" Presione Enter para continuar ").lower()
+                    if respuesta.lower() == 'salir':
+                        print ("")
+                        print (" =================================================================== ")
+                        print ("")
+                        break
+                    else : 
+                        print ("")
+                        print (" =================================================================== ")
+                        print ("")
                 else:
-                        input(" Presione Enter para continuar... ")
+                    input(" Presione Enter para continuar... ")
                 pagina_actual += 1
             TrainerP = (int(input(" Ingrese la identificacion del trainer que sera el encargado del grupo : ")))
             for trainer in data_trainers : 
-                if trainer["identificacion"] == TrainerP : 
+                if trainer["identificacion"] == TrainerP and trainer["horario"] == nuevo_grupo["horario"]: 
                     nuevo_grupo["trainer"] = trainer
                     print ("")
                     print (" =================================== ")
@@ -544,16 +555,108 @@ def Matriculas() :
                     print ("")
                     print (" =================================== ")
                     break
-                else :  
+                else : 
                     print ("")
                     print (" =================================== ")
                     print ("")
-                    print ("        Buscando Trainer             ")
+                    print ("        TRAINER NO DISPONIBLE         ")
                     print ("")
-                    print (" =================================== ") 
+                    print (" =================================== ")
+                    return 
+            imprimir_Estudiantes = True
+            if imprimir_Estudiantes == True :
+                num_estudiantes = len(data_estudiantes[1]["estudiantesInscritos"])
+                estudiantes_por_pagina = 5
+                num_paginas = (num_estudiantes // estudiantes_por_pagina) + 1
+                pagina_actual = 0
+                while pagina_actual < num_paginas:
+                    print(f"Página {pagina_actual + 1}/{num_paginas}:")
+                    print("╔════════════════════════════════════╗")
+                    print("║         LISTA DE ESTUDIANTES       ║")
+                    print("╠════════════════════════════════════╣")
+                    for estudiante in data_estudiantes[1]["estudiantesInscritos"][pagina_actual * estudiantes_por_pagina:(pagina_actual + 1) * estudiantes_por_pagina]:
+                        print("║ Nombre:", estudiante["nombres"])
+                        print("║ Apellidos:", estudiante["apellidos"])
+                        print("║ Identificación:", estudiante["identificacion"])
+                        print("║ Dirección:", estudiante["direccion"])
+                        print("║ Acudiente:", estudiante["acudiente"])
+                        print("║ Teléfonos:")
+                        print("║   Celular:", estudiante["telefonos"]["celular"])
+                        print("║   Fijo:", estudiante["telefonos"]["fijo"])
+                        print("║ Estado:", estudiante["estado"])
+                        print("╠════════════════════════════════════╣")
+                    if pagina_actual == 3:
+                        respuesta = input(" Presione Enter para continuar o escriba 'salir' para regresar al menú anterior: ").lower()
+                        print ("")
+                        if respuesta.lower() == 'salir':
+                            print ("")
+                            print (" =================================================================== ")
+                            print ("")
+                            break
+                        else : 
+                            print ("")
+                            print (" =================================================================== ")
+                            print ("")
+                    else:
+                        print ("")
+                        input("Presione Enter para continuar...")
+                    pagina_actual += 1
+            print ("") 
+            print (" ============================================== ")
+            print ("")
+            print ("   ¿ Desea añadir un estudiante al  grupo ?     ")
+            print ("")
+            print (" ============================================== ")
+            print ("")
+            while True: 
+                respuesta1 = input (" si o no : ")
+                print ("")
+                if respuesta1 == "si": 
+                    Estudiante_Id = int(input(" Identificacion del estudiante : "))
+                    for estudiante in data_estudiantes[1]["estudiantesInscritos"]: 
+                        if Estudiante_Id == estudiante['identificacion'] and estudiante['estado'] == "Aprobado" :
+                            nuevo_grupo['estudiantes'].append(estudiante)
+                            print ("")
+                            print (" =================================== ")
+                            print ("")
+                            print ("        Estudiante Encontrado         ")
+                            print ("")
+                            print (" =================================== ")
+                            print ("")
+                            print (" ¿ Desea añadir otro estudiante ? ")
+                            print ("")
+                if respuesta1 == "no": 
+                            break
+            print ("")
+            print (" ============================================ ")
+            print ("")
+            print (" ¿ A que salon desea añadir el nuevo grupo ? ")
+            print ("")
+            print (" ============================================ ")
+            print ("")
+            print (" Lista De Salones Disponibles : ")
+            for salon in data_salones : 
+                print ("")
+                print (salon["nombre"]) 
+            print ("")
+            salon_Name = input (" Ingrese el nombre del salon al que quiere agregar el grupo : ")
+            for salon in data_salones :
+                if salon["nombre"] == salon_Name : 
+                    salon["grupos"].append(nuevo_grupo)
+                    print ("")
+                    print (" =================================== ")
+                    print ("")
+                    print ("        SALON ENCONTRADO           ")
+                    print ("")
+                    print (" =================================== ")
+                    print ("")
+                    print ( " NUEVO GRUPO AÑADIDO ")
+                    break
         elif respuesta.lower() == "no" :
             print ("")
             print (" Volviendo al menu... ")
             print ("")
             break
+        with open ('Salones.json', 'w') as salones_file : 
+            json.dump(data_salones, salones_file, indent=4)
     return

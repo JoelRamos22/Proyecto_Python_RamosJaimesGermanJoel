@@ -1,25 +1,17 @@
 [
     {
-        "nombre" : "sputnik",
-        "capacidad" : 33,
-        "grupos" : 
-        [
-
-        ]
+        "nombre": "sputnik",
+        "capacidad": 33,
+        "grupos": []
     },
     {
-        "nombre" : "Artemis",
-        "capacidad" : 33,
-        "grupos" : 
-        [
-        ]
+        "nombre": "Artemis",
+        "capacidad": 33,
+        "grupos": []
     },
     {
-        "nombre" : "Apolo",
-        "capacidad" : 33,
-        "grupos" : 
-        [
-        ]
+        "nombre": "Apolo",
+        "capacidad": 33,
+        "grupos": []
     }
-
 ]
