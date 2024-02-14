@@ -263,24 +263,77 @@ def CrearModulos():
         json.dump(data_notas, notas_file, indent=4)
     return
 def Notas(): 
-    with open ('Notas.json', 'w') as notas_file :
-        data_notas = json.load(notas_file) 
+    with open ('Notas.json', 'r') as notas_json : 
+        data_notas = json.load(notas_json) 
     while True : 
         print ("================================")
         print ("")
         respuesta = input (" ¿ Desea añadir notas a  su curso? : ") 
         print ("") 
         print (" =================================== ")
-        if respuesta.lower() == si : 
+        if respuesta.lower() == "si" : 
             print ("")
             Grupo_Name = input (" Ingrese el nombre de su grupo : ")
             for grupo in data_notas : 
+                grupo_encontrado = False
                 if grupo['nombre'] == Grupo_Name : 
+                    grupo_encontrado = True 
                     for modulos in grupo['modulos']:
+                        modulo_encontrado = False 
                         print ("") 
                         Modulo_Name = input (" Ingrese el nombre del modulo al que desea agregar notas : ")
                         if modulos['nombre'] == Modulo_Name : 
-                            for estudiante in grupo['estudiantes']: 
-                                id_Estudiante = input (" Ingrese la identificacion del estudiante : " ) 
-                                if id_Estudiante == estudiante['identificacion'] : 
-                                    
+                            modulo_encontrado = True
+                            print ("")
+                            id_Estudiante = input (" Ingrese la identificacion del estudiante : " ) 
+                            estudiante_encontrado = False
+                            for estudiante in grupo['estudiantes']:
+                                if estudiante['identificacion'] == id_Estudiante: 
+                                    estudiante_encontrado = True
+                                    print ("")
+                                    print (" Ahora ingrese la nota del estudiante : " )
+                                    print ("")
+                                    nota = int(input (" Ingrese la nota del estudiante : " ))
+                                    print ("")
+                                    nueva_nota = {
+                                        'nombre': estudiante['nombre'],
+                                        'id_Estudiante' : estudiante['id_Estudiante'],
+                                        'nota' : nota 
+                                    }
+                                    grupo['modulos'].append(nueva_nota)
+                                    print ("")
+                                    print (" ======================================= ")
+                                    print ("")
+                                    print ("         NOTA AÑADIDA CON EXITO          ")
+                                    print (" ========================================" )
+                                    print ("")
+                                    break
+                        if (estudiante_encontrado == False) : 
+                            print ("")
+                            print (" =================================== ")
+                            print ("")
+                            print ("     | Estudiante No Encontrado     |      ")
+                            print ("")
+                            print (" =================================== ")
+                            print ("")
+                            break
+                    if (modulo_encontrado == False) : 
+                        print ("")
+                        print (" =================================== ")
+                        print ("")
+                        print ("     | Modulo No Encontrado     |      ")
+                        print ("")
+                        print (" =================================== ")
+                        print ("")
+                        break
+            if (grupo_encontrado == False) :
+                print ("") 
+                print (" ================================= " )
+                print ("")
+                print ("      Grupo no  encontrado          ")
+                print ("") 
+                print (" ================================= " )
+                break 
+    with open ('Notas.json', 'w') as notas_json: 
+        json.dump(data_notas, notas_json, indent=4) 
+    return
