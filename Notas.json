@@ -1,0 +1,41 @@
+[
+    {
+        "nombre": "u3",
+        "horario": "diurno",
+        "Inicio": "23/06/08",
+        "Final": "27/06/11",
+        "estudiantes": [
+            {
+                "identificacion": 1,
+                "nombres": "p",
+                "apellidos": "i",
+                "direccion": "8",
+                "acudiente": "o",
+                "telefonos": {
+                    "celular": "9",
+                    "fijo": "4"
+                },
+                "Prueba": 80,
+                "estado": "Aprobado"
+            }
+        ],
+        "trainer": {
+            "identificacion": 12345,
+            "nombre": "Juan",
+            "apellidos": "mari\u00f1o",
+            "Especialidad": "java",
+            "horario": "diurno",
+            "Celular": "317819"
+        },
+        "modulos": [
+            {
+                "nombre": "python",
+                "notas": []
+            },
+            {
+                "nombre": "java",
+                "notas": []
+            }
+        ]
+    }
+]

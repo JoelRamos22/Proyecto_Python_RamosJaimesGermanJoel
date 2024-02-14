@@ -20,6 +20,7 @@ def Trainer_Opciones (opcion):
             print (" ==================================================================  ")
             print ("") 
             Modulos()
+            break
         elif opcion == 3 : 
             print ("")
             print (" ==================================================================  ")
@@ -133,4 +134,130 @@ def Info_Curso():
             print (" Volviendo al menu... ")
             print ("")
             break
+    return
+def Modulos() : 
+    with open ('salones.json', 'r') as salones_json : 
+        data_salones = json.load(salones_json) 
+    with open ('Notas.json',  'r') as notas_json : 
+        data_notas = json.load(notas_json)
+    pregunta = input (" nota : ( Si los datos de su grupo ya estan cargados escriba 'continuar' si no presione enter ) : ")
+    print ("")
+    if pregunta.lower() == "continuar" :
+        print ("")
+        CrearModulos()
+        return
+    while True :
+        respuesta = input(" ¿ Desea añadir modulos de notas a  su curso ? : ")
+        print ("")
+        print (" =================================================== ")
+        if respuesta.lower() == "si" : 
+            print ("")
+            print (" ¡ Okey, primero empecemos añadiendo la informacion de todo tu curso para poder empezar a crear los modulos :D ! ")
+            print ("")
+            salon_name = input (" Ingrese el nombre del salon donde esta asignado su grupo : ")
+            salon_encontrado = False
+            for salon in data_salones : 
+                if salon['nombre'] == salon_name : 
+                    print ("")
+                    print (" ======================================= ")
+                    print ("")
+                    print ("             Salon Encontrado             ")
+                    print ("")
+                    print (" ======================================== ")
+                    print ("")
+                    salon_encontrado = True
+                    grupo_encontrado = False
+                    Grupo_Name = input (" Ingrese el nombre de su grupo : ") 
+                    for grupo in salon['grupos'] : 
+                        if grupo['nombre'] == Grupo_Name : 
+                            print ("")
+                            print ("  ======================================= ")
+                            print ("")
+                            print ("            Grupo Encontrado               ")
+                            print ("")
+                            print ("  ======================================== ")
+                            print ("") 
+                            grupo_encontrado = True
+                            grupo['modulos'] = []
+                            data_notas.append(grupo)
+                            print (" Los Datos de su grupo han sido añadidos correctamente ")
+                            print ("")
+                            with open ('Notas.json', 'w') as nota_json : 
+                                json.dump(data_notas, nota_json, indent=4)
+                            CrearModulos()
+                            break
+                    if (grupo_encontrado == False) : 
+                        print ("")
+                        print ("  ======================================= ")
+                        print ("")
+                        print ("            Grupo No Encontrado              ")
+                        print ("")
+                        print ("  ======================================== ")
+                        print ("")
+                        break
+            if (salon_encontrado == False) :
+                print ("") 
+                print (" ========================================= ")
+                print ("")
+                print ("             Salon No Encontrado            ")
+                print ("")
+                print (" ========================================= ")
+                break
+        elif respuesta.lower() == "no" : 
+            print ("")
+            print (" Volviendo al menu... ")
+            print ("")
+            break 
+    return
+
+def CrearModulos(): 
+    with open ('Notas.json', 'r' ) as nota_json :  
+        data_notas = json.load(nota_json) 
+    while True : 
+        print (" ============================================== ")
+        print ("")
+        respuesta = input ("    ¿ Desea Crear un modulo ? :   ")
+        print ("")
+        if respuesta == "si" : 
+            print ("")
+            nombreG = input (" ¿ En que grupo desea crear el nuevo modulo ? : ")
+            print ("")
+            grupo_encontrado = False
+            for nota in data_notas : 
+                if nota['nombre'] == nombreG : 
+                    print ("")
+                    print (" =================================== ")
+                    print ("")
+                    nombre = input ("  Ingrese el nombre del modulo  :   ")
+                    print ("")
+                    print (" =================================== ") 
+                    print ("")
+                    nuevo_modulo = {
+                        'nombre' : nombre, 
+                        'notas' : []
+                    }
+                    nota['modulos'].append(nuevo_modulo)
+                    print ("")
+                    print (" =================================== " )
+                    print ("") 
+                    print (" Modulo Creado Correctamente ") 
+                    print ("")
+                    grupo_encontrado = True
+                break 
+            if (grupo_encontrado == False) :
+                print ("")
+                print (" =================================== ")
+                print ("")
+                print ("     | Grupo No Encontrado     |      ")
+                print ("")
+                print (" =================================== ")
+                print ("")
+                break
+        elif respuesta.lower() == "no" :
+            print ("")
+            print (" Volviendo a la opcion de notas... ")
+            print ("")
+            break 
+    with open ('Notas.json', 'w') as notas_file : 
+        json.dump(data_notas, notas_file, indent=4)
     return
