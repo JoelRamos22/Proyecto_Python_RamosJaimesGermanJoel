@@ -45,12 +45,14 @@ def Info_Curso():
         data_salones = json.load(salones_file) 
     with open ('Trainers.json', 'r') as Trainers_file : 
         data_trainers = json.load(Trainers_file) 
-    print ("")
-    respuesta = input(" ¿ Desea saber la informacion de su curso ? : ")
-    print (" ======================================== ")
     while True : 
+        print ("")
+        respuesta = input(" ¿ Desea saber la informacion de su curso ? : ")
+        print ("")
+        print (" ======================================== ")
         if respuesta.lower() == "si" : 
             print ("")
+            trainer_encontrado = False
             Id_Trainer = int(input(" Ingrese su identificacion : "))
             for trainer in data_trainers : 
                 if trainer['identificacion'] == Id_Trainer : 
@@ -61,8 +63,20 @@ def Info_Curso():
                     print ("")
                     print (" ======================================== ")
                     print ("") 
-                    print (f" Bienvenido {trainer['nombre']}")
+                    print (f"              ¡ Bienvenido {trainer['nombre']} !         ")
                     print ("")
+                    trainer_encontrado = True
+                    break
+            if (trainer_encontrado == False) :
+                print ("")
+                print (" ======================================= ")
+                print ("")
+                print ("     Informacion Trainer No Encontrada     ")
+                print ("")
+                print (" ======================================== ")
+                print ("") 
+                return
+            salon_encontrado = False
             salon_name = input (" Ingrese el nombre del salon donde esta asignado su grupo : ")
             for salon in data_salones : 
                 if salon['nombre'] == salon_name : 
@@ -73,6 +87,8 @@ def Info_Curso():
                     print ("")
                     print (" ======================================== ")
                     print ("")
+                    salon_encontrado = True
+                    grupo_encontrado = False
                     Grupo_Name = input (" Ingrese el nombre de su grupo : ") 
                     for grupo in salon['grupos'] : 
                         if grupo['nombre'] == Grupo_Name : 
@@ -83,10 +99,35 @@ def Info_Curso():
                             print ("")
                             print ("  ======================================== ")
                             print ("") 
-                            for keys, values in grupo : 
-                                print (f" {keys} : {values} ")
+                            grupo_encontrado = True
+                            for key, value in grupo.items() : 
+                                if key ==  'estudiantes' : 
+                                    print (f" {key} : ")
+                                    for estudiante in value : 
+                                        print ( " =========================================== ")
+                                        for k, v in estudiante.items() :
+                                            print  (f"  {k.capitalize()}: {v}  ")
+                                else : 
+                                    print(f" - {key.capitalize()}: {value} ")
+                                    print (" ***************************  ")
                             break 
+                    if (grupo_encontrado == False) : 
+                        print ("")
+                        print ("  ======================================= ")
+                        print ("")
+                        print ("            Grupo No Encontrado              ")
+                        print ("")
+                        print ("  ======================================== ")
+                        print ("")
+                        return
+            if (salon_encontrado == False) : 
                 print ("") 
+                print (" ======================================= ") 
+                print ("")
+                print ("             Salon No Encontrado             ")
+                print ("")
+                print (" ======================================== ")
+                return
         else : 
             print ("")
             print (" Volviendo al menu... ")
