@@ -30,6 +30,7 @@ def Trainer_Opciones (opcion):
             print (" ================================================================== ")
             print ("") 
             Notas()
+            break
         elif opcion == 4 :
             print ("")
             print (" Saliendo...")
@@ -243,7 +244,7 @@ def CrearModulos():
                     print (" Modulo Creado Correctamente ") 
                     print ("")
                     grupo_encontrado = True
-                break 
+                    break
             if (grupo_encontrado == False) :
                 print ("")
                 print (" =================================== ")
@@ -255,9 +256,31 @@ def CrearModulos():
                 break
         elif respuesta.lower() == "no" :
             print ("")
-            print (" Volviendo a la opcion de notas... ")
+            print (" Volviendo a la opcion anteior... ")
             print ("")
             break 
     with open ('Notas.json', 'w') as notas_file : 
         json.dump(data_notas, notas_file, indent=4)
     return
+def Notas(): 
+    with open ('Notas.json', 'w') as notas_file :
+        data_notas = json.load(notas_file) 
+    while True : 
+        print ("================================")
+        print ("")
+        respuesta = input (" ¿ Desea añadir notas a  su curso? : ") 
+        print ("") 
+        print (" =================================== ")
+        if respuesta.lower() == si : 
+            print ("")
+            Grupo_Name = input (" Ingrese el nombre de su grupo : ")
+            for grupo in data_notas : 
+                if grupo['nombre'] == Grupo_Name : 
+                    for modulos in grupo['modulos']:
+                        print ("") 
+                        Modulo_Name = input (" Ingrese el nombre del modulo al que desea agregar notas : ")
+                        if modulos['nombre'] == Modulo_Name : 
+                            for estudiante in grupo['estudiantes']: 
+                                id_Estudiante = input (" Ingrese la identificacion del estudiante : " ) 
+                                if id_Estudiante == estudiante['identificacion'] : 
+                                    
