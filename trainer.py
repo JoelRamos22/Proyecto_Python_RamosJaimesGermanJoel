@@ -210,7 +210,6 @@ def Modulos() :
             print ("")
             break 
     return
-
 def CrearModulos(): 
     with open ('Notas.json', 'r' ) as nota_json :  
         data_notas = json.load(nota_json) 
@@ -263,77 +262,131 @@ def CrearModulos():
         json.dump(data_notas, notas_file, indent=4)
     return
 def Notas(): 
-    with open ('Notas.json', 'r') as notas_json : 
+    with open('Notas.json', 'r') as notas_json : 
         data_notas = json.load(notas_json) 
-    while True : 
-        print ("================================")
-        print ("")
-        respuesta = input (" ¿ Desea añadir notas a  su curso? : ") 
-        print ("") 
-        print (" =================================== ")
-        if respuesta.lower() == "si" : 
-            print ("")
-            Grupo_Name = input (" Ingrese el nombre de su grupo : ")
-            for grupo in data_notas : 
-                grupo_encontrado = False
-                if grupo['nombre'] == Grupo_Name : 
+    with open('estudiantes.json', 'r') as estudiantes_json : 
+        data_estudiantes = json.load(estudiantes_json)
+
+    while True: 
+        print("")
+        respuesta = input("    ¿Desea añadir notas a su curso?:    ") 
+        print("")
+        print (" ======================================= ")
+
+        if respuesta.lower() == "si": 
+            print("")
+            Grupo_Name = input("    Ingrese el nombre de su grupo:   ")
+            print("")
+            print (" /---------------------------/--------------------/ ")
+
+            grupo_encontrado = False
+
+            for grupo in data_notas: 
+                if grupo['nombre'] == Grupo_Name: 
                     grupo_encontrado = True 
+                    Modulo_Name = input("   Ingrese el nombre del módulo al que desea agregar notas:   ")
+                    print("")
+                    print (" /---------------------------/--------------------/ ")
+                    modulo_encontrado = False 
                     for modulos in grupo['modulos']:
-                        modulo_encontrado = False 
-                        print ("") 
-                        Modulo_Name = input (" Ingrese el nombre del modulo al que desea agregar notas : ")
-                        if modulos['nombre'] == Modulo_Name : 
-                            modulo_encontrado = True
+                        if modulos['nombre'] == Modulo_Name: 
                             print ("")
-                            id_Estudiante = input (" Ingrese la identificacion del estudiante : " ) 
+                            id_Estudiante = int(input("      Ingrese la identificación del estudiante:    ")) 
+                            print("")
+                            print (" /---------------------------/--------------------/ ")
+                            modulo_encontrado = True
                             estudiante_encontrado = False
                             for estudiante in grupo['estudiantes']:
                                 if estudiante['identificacion'] == id_Estudiante: 
                                     estudiante_encontrado = True
+                                    print("")
+                                    print("      Ahora ingrese la nota del estudiante:"     )
+                                    print("")
+                                    print (" ============================================ ")
                                     print ("")
-                                    print (" Ahora ingrese la nota del estudiante : " )
-                                    print ("")
-                                    nota = int(input (" Ingrese la nota del estudiante : " ))
-                                    print ("")
+
+                                    NotaT = int(input("Ingrese la nota de la prueba teórica: "))
+                                    print("")
+                                    print (" /---------------------------/--------------------/ ")
+                                    NotaP = int(input("Ingrese la nota de la prueba práctica: "))
+                                    print("")
+                                    print (" /---------------------------/--------------------/ ")
+                                    NotaQ = int(input("Ingrese la nota de los quizes y actividades: "))
+                                    print("")
+                                    print (" /---------------------------/--------------------/ ")
+
+                                    notaF = (NotaT * 0.3) + (NotaP * 0.6) + (NotaQ * 0.1)
                                     nueva_nota = {
-                                        'nombre': estudiante['nombre'],
-                                        'id_Estudiante' : estudiante['id_Estudiante'],
-                                        'nota' : nota 
-                                    }
-                                    grupo['modulos'].append(nueva_nota)
-                                    print ("")
-                                    print (" ======================================= ")
-                                    print ("")
-                                    print ("         NOTA AÑADIDA CON EXITO          ")
-                                    print (" ========================================" )
-                                    print ("")
+                                        'nombre': estudiante['nombres'],
+                                        'id_Estudiante' : estudiante['identificacion'],
+                                        'NotaT' : NotaT,
+                                        'NotaP' : NotaP, 
+                                        'NotaQ' : NotaQ, 
+                                        'NotaF' : notaF
+                                    } 
+                                    modulos['notas'].append(nueva_nota)
+                                    CambiarEstado (notaF)
+                                    with open ('estudiantes.json', 'w') as estudiantes_file : 
+                                        json.dump(data_estudiantes, estudiantes_file, indent=4)
+                                    print("=======================================")
+                                    print("")
+                                    print("NOTA AÑADIDA CON ÉXITO")
+                                    print("")
+                                    print("=======================================")
+                                    print("")
                                     break
-                        if (estudiante_encontrado == False) : 
-                            print ("")
-                            print (" =================================== ")
-                            print ("")
-                            print ("     | Estudiante No Encontrado     |      ")
-                            print ("")
-                            print (" =================================== ")
-                            print ("")
+                            if not estudiante_encontrado: 
+                                print("")
+                                print("| Estudiante No Encontrado |")
+                                print("")
                             break
-                    if (modulo_encontrado == False) : 
-                        print ("")
-                        print (" =================================== ")
-                        print ("")
-                        print ("     | Modulo No Encontrado     |      ")
-                        print ("")
-                        print (" =================================== ")
-                        print ("")
-                        break
-            if (grupo_encontrado == False) :
-                print ("") 
-                print (" ================================= " )
-                print ("")
-                print ("      Grupo no  encontrado          ")
-                print ("") 
-                print (" ================================= " )
-                break 
-    with open ('Notas.json', 'w') as notas_json: 
+                    if not modulo_encontrado: 
+                        print("")
+                        print("| Módulo No Encontrado |")
+                        print("")
+                    break
+            if not grupo_encontrado:
+                print("") 
+                print("Grupo no encontrado")
+                print("") 
+
+        elif respuesta.lower() == "no": 
+            print("")
+            print("Volviendo a la opción anterior...")
+            print("")
+            break 
+
+    with open('Notas.json', 'w') as notas_json: 
         json.dump(data_notas, notas_json, indent=4) 
-    return
+    with open ('estudiantes.json', 'w') as estudiantes_file : 
+        json.dump(data_estudiantes, estudiantes_file, indent=4) 
+
+    return 
+
+def CambiarEstado(notaF) : 
+    
+    with open('Notas.json', 'r') as notas_json : 
+        data_notas = json.load(notas_json) 
+    with open('estudiantes.json', 'r') as estudiantes_json : 
+        data_estudiantes = json.load(estudiantes_json) 
+    
+    if notaF <= 60.0 : 
+        print ("")
+        print ("   ACTUALIZANDO ESTADO DEL ESTUDIANTE    ")
+        print ("")
+        for estudiantes in data_estudiantes[1]['estudiantesInscritos'] : 
+                modulos_fallados = 0 
+                for notas in data_notas : 
+                    for modulos in notas['modulos'] : 
+                        for nota in modulos['notas'] : 
+                            if nota['id_Estudiante'] == estudiantes['identificacion'] and nota['NotaF'] <= 60.0 : 
+                                modulos_fallados += 1 
+                                print ("") 
+                    
+                            if modulos_fallados >= 1 : 
+                                estudiantes['estado'] = " Riesgo (Condicional) " 
+                            elif modulos_fallados >= 2 : 
+                                estudiantes['estado'] = " Riesgo (Expulsion) "
+
+    with open ('estudiantes.json','w') as estudiantes_files : 
+        json.dump(data_estudiantes, estudiantes_files, indent=4) 

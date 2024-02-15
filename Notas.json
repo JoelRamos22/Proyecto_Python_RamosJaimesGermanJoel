@@ -30,11 +30,21 @@
         "modulos": [
             {
                 "nombre": "python",
-                "notas": []
+                "notas": [
+                ]
             },
             {
                 "nombre": "java",
-                "notas": []
+                "notas": [
+                    {
+                        "nombre": "p",
+                        "id_Estudiante": 1,
+                        "NotaT": 80,
+                        "NotaP": 70,
+                        "NotaQ": 90,
+                        "NotaF": 75.0
+                    }
+                ]
             },
             {
                 "nombre": "NodeJs",
