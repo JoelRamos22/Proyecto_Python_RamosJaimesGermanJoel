@@ -2,7 +2,7 @@
     {
         "estudiantesCursados": [
             {
-                "identificacion": "123456789",
+                "identificacion": 123456789,
                 "nombres": "Julio Cesar",
                 "apellidos": "Gutierrez Rojas",
                 "direccion": "Carrera 123",
@@ -14,7 +14,7 @@
                 "estado": "Aprobado"
             },
             {
-                "identificacion": "987654321",
+                "identificacion": 987654321,
                 "nombres": "Andrea",
                 "apellidos": "Sanchez Rios",
                 "direccion": "Calle 987",
@@ -26,7 +26,7 @@
                 "estado": "Cursando"
             },
             {
-                "identificacion": "456789012",
+                "identificacion": 456789012,
                 "nombres": "Diego Alejandro",
                 "apellidos": "Rodriguez Martinez",
                 "direccion": "Avenida 456",
@@ -38,7 +38,7 @@
                 "estado": "Expulsado"
             },
             {
-                "identificacion": "135792468",
+                "identificacion": 135792468,
                 "nombres": "Laura Vanessa",
                 "apellidos": "Lopez Gonzalez",
                 "direccion": "Calle 135",
@@ -50,7 +50,7 @@
                 "estado": "Retirado"
             },
             {
-                "identificacion": "246801357",
+                "identificacion": 246801357,
                 "nombres": "Carlos Alberto",
                 "apellidos": "Diaz Ramirez",
                 "direccion": "Carrera 246",
@@ -62,7 +62,7 @@
                 "estado": "Graduado"
             },
             {
-                "identificacion": "369258147",
+                "identificacion": 369258147,
                 "nombres": "Sofia",
                 "apellidos": "Hernandez Rodriguez",
                 "direccion": "Avenida 369",
@@ -74,7 +74,7 @@
                 "estado": "Aprobado"
             },
             {
-                "identificacion": "582631479",
+                "identificacion": 582631479,
                 "nombres": "Luisa Fernanda",
                 "apellidos": "Gomez Diaz",
                 "direccion": "Calle 582",
@@ -86,7 +86,7 @@
                 "estado": "Cursando"
             },
             {
-                "identificacion": "794613852",
+                "identificacion": 794613852,
                 "nombres": "David Alejandro",
                 "apellidos": "Martinez Garcia",
                 "direccion": "Carrera 794",
@@ -98,7 +98,7 @@
                 "estado": "Expulsado"
             },
             {
-                "identificacion": "123987456",
+                "identificacion": 123987456,
                 "nombres": "Maria Camila",
                 "apellidos": "Perez Hernandez",
                 "direccion": "Avenida 123",
@@ -110,7 +110,7 @@
                 "estado": "Retirado"
             },
             {
-                "identificacion": "456123789",
+                "identificacion": 456123789,
                 "nombres": "Juan Manuel",
                 "apellidos": "Gutierrez Gomez",
                 "direccion": "Calle 456",
@@ -122,7 +122,7 @@
                 "estado": "Graduado"
             },
             {
-                "identificacion": "789456321",
+                "identificacion": 789456321,
                 "nombres": "Carolina",
                 "apellidos": "Ramirez Lopez",
                 "direccion": "Carrera 789",
@@ -134,7 +134,7 @@
                 "estado": "Aprobado"
             },
             {
-                "identificacion": "951357456",
+                "identificacion": 951357456,
                 "nombres": "Daniel",
                 "apellidos": "Hernandez Castro",
                 "direccion": "Avenida 951",
@@ -146,7 +146,7 @@
                 "estado": "Cursando"
             },
             {
-                "identificacion": "741852963",
+                "identificacion": 741852963,
                 "nombres": "Valentina",
                 "apellidos": "Lopez Ramirez",
                 "direccion": "Calle 741",
@@ -158,7 +158,7 @@
                 "estado": "Expulsado"
             },
             {
-                "identificacion": "258369147",
+                "identificacion": 258369147,
                 "nombres": "Jose Daniel",
                 "apellidos": "Perez Gomez",
                 "direccion": "Avenida 258",
@@ -170,7 +170,7 @@
                 "estado": "Retirado"
             },
             {
-                "identificacion": "852369147",
+                "identificacion": 852369147,
                 "nombres": "Mariana",
                 "apellidos": "Ramirez Rodriguez",
                 "direccion": "Carrera 852",
