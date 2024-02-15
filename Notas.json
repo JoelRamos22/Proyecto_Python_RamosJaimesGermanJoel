@@ -16,7 +16,7 @@
                     "fijo": "4"
                 },
                 "Prueba": 80,
-                "estado": "Aprobado"
+                "estado": "Riesgo (Expulsion)"
             }
         ],
         "trainer": {
@@ -31,6 +31,14 @@
             {
                 "nombre": "python",
                 "notas": [
+                    {
+                        "nombre": "p",
+                        "id_Estudiante": 1,
+                        "NotaT": 30,
+                        "NotaP": 30,
+                        "NotaQ": 30,
+                        "NotaF": 30.0
+                    }
                 ]
             },
             {
@@ -39,10 +47,10 @@
                     {
                         "nombre": "p",
                         "id_Estudiante": 1,
-                        "NotaT": 80,
-                        "NotaP": 70,
-                        "NotaQ": 90,
-                        "NotaF": 75.0
+                        "NotaT": 30,
+                        "NotaP": 30,
+                        "NotaQ": 30,
+                        "NotaF": 30.0
                     }
                 ]
             },

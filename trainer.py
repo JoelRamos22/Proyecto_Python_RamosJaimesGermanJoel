@@ -325,9 +325,11 @@ def Notas():
                                         'NotaF' : notaF
                                     } 
                                     modulos['notas'].append(nueva_nota)
-                                    CambiarEstado (notaF)
+                                    with open('Notas.json', 'w') as notas_json: 
+                                        json.dump(data_notas, notas_json, indent=4) 
                                     with open ('estudiantes.json', 'w') as estudiantes_file : 
                                         json.dump(data_estudiantes, estudiantes_file, indent=4)
+                                    CambiarEstado ()
                                     print("=======================================")
                                     print("")
                                     print("NOTA AÑADIDA CON ÉXITO")
@@ -355,38 +357,25 @@ def Notas():
             print("Volviendo a la opción anterior...")
             print("")
             break 
-
-    with open('Notas.json', 'w') as notas_json: 
-        json.dump(data_notas, notas_json, indent=4) 
-    with open ('estudiantes.json', 'w') as estudiantes_file : 
-        json.dump(data_estudiantes, estudiantes_file, indent=4) 
-
     return 
+def CambiarEstado():
+    with open('Notas.json', 'r') as notas_json:
+        data_notas = json.load(notas_json)
 
-def CambiarEstado(notaF) : 
-    
-    with open('Notas.json', 'r') as notas_json : 
-        data_notas = json.load(notas_json) 
-    with open('estudiantes.json', 'r') as estudiantes_json : 
-        data_estudiantes = json.load(estudiantes_json) 
-    
-    if notaF <= 60.0 : 
-        print ("")
-        print ("   ACTUALIZANDO ESTADO DEL ESTUDIANTE    ")
-        print ("")
-        for estudiantes in data_estudiantes[1]['estudiantesInscritos'] : 
-                modulos_fallados = 0 
-                for notas in data_notas : 
-                    for modulos in notas['modulos'] : 
-                        for nota in modulos['notas'] : 
-                            if nota['id_Estudiante'] == estudiantes['identificacion'] and nota['NotaF'] <= 60.0 : 
-                                modulos_fallados += 1 
-                                print ("") 
-                    
-                            if modulos_fallados >= 1 : 
-                                estudiantes['estado'] = " Riesgo (Condicional) " 
-                            elif modulos_fallados >= 2 : 
-                                estudiantes['estado'] = " Riesgo (Expulsion) "
+    for grupo in data_notas:
+        for estudiante in grupo['estudiantes']:
+            modulos_fallados = 0
+            for modulo in grupo['modulos']:
+                for nota in modulo['notas']:
+                    if nota['id_Estudiante'] == estudiante['identificacion'] and nota['NotaF'] <= 60:
+                        modulos_fallados += 1
 
-    with open ('estudiantes.json','w') as estudiantes_files : 
-        json.dump(data_estudiantes, estudiantes_files, indent=4) 
+            if modulos_fallados >= 2:
+                estudiante['estado'] = "Riesgo (Expulsion)"
+            elif modulos_fallados == 1:
+                estudiante['estado'] = "Riesgo (condicional)"
+            else:
+                estudiante['estado'] = "Aprobado"
+
+    with open('Notas.json', 'w') as notas_file:
+        json.dump(data_notas, notas_file, indent=4)
