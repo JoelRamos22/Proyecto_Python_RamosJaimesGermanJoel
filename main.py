@@ -1,6 +1,7 @@
 import menus 
 import coordinador
 import trainer
+import campers
 
 while True: 
         opc = menus.Menu_Principal() 
@@ -11,7 +12,8 @@ while True:
             opc_Trainer = menus.Menu_Trainer()
             trainer.Trainer_Opciones(opc_Trainer)
         elif opc == 3 : 
-            menus.Menu_Estudiantes()
+            opc_camper  = menus.Menu_Estudiantes()
+            campers.Campers_Opciones(opc_camper)
         elif opc == 4 : 
             print ("")
             print (" saliendo...")
