@@ -431,16 +431,15 @@ def Rutas(opcion):
                                 print ("===========================")
                                 with open ('Rutas.json', 'w') as rutas_file :
                                     json.dump(data_rutas, rutas_file, indent=4)
+                                Trainer_Ruta()
                                 break
-                            else : 
-                                print ("")
-                                print (" Buscando Estudiante ")
-                                print ("")
-                                print ("===========================")
                         if ruta_Encontrada == False :
                             print ("")
                             print (" Ruta no encontrada ")
+            
             elif respuesta.lower() == "no": 
+                print ("")
+                Trainer_Ruta()
                 print ("")
                 print (" Volviendo al menu... ")
                 print ("")
@@ -675,4 +674,78 @@ def Matriculas() :
             break
         with open ('Salones.json', 'w') as salones_file : 
             json.dump(data_salones, salones_file, indent=4)
+    return
+
+def Trainer_Ruta () : 
+    with open ('Trainers.json', 'r') as trainer_file : 
+        data_trainer = json.load(trainer_file)
+    with open ('Rutas.json', 'r') as rutas_file : 
+        data_rutas = json.load(rutas_file) 
+        
+    while True : 
+        print ("")
+        respuesta = input(" ¿Desea añadir algun trainer? : ")
+        print ("")
+        if respuesta.lower() == "si": 
+            for ruta in data_rutas : 
+                for  key, values in ruta.items() : 
+                    print ("")
+                    print ( f" Ruta :  {key}")
+                    print ("")
+            Ruta_Name = input (" Ingrese el nombre de la ruta : ")
+            ruta_encontrada = False  
+            for ruta in data_rutas : 
+                if Ruta_Name in ruta : 
+                    print ("")
+                    print (" =================================== ")
+                    print ("")
+                    print ("        RUTA ENCONTRADA           ")
+                    print ("")
+                    print (" =================================== ")
+                    print ("") 
+                    ruta_encontrada = True 
+                    trainer_encontrado = False 
+                    Id_trainer = int(input(" Ingrese la identificacion del trainer : "))
+                    for trainer in data_trainer : 
+                        if Id_trainer == trainer["identificacion"] : 
+                            print ("")
+                            print (" =================================== ")
+                            print ("")
+                            print ("        TRAINER  ENCONTRADO            ")
+                            print ("")
+                            print (" =================================== ")
+                            print ("") 
+                            trainer_encontrado = True 
+                            nuevo_trainer = {
+                                'trainer' : []
+                            }
+                            nuevo_trainer['trainer'].append(trainer)
+                            ruta[Ruta_Name].append(nuevo_trainer)
+                            print ("")
+                            print (" TRAINER AÑADIDO CON EXITO")
+                            print ("")
+                            with open ('Rutas.json', 'w') as rutas_file : 
+                                json.dump(data_rutas, rutas_file, indent=4)
+                    if (trainer_encontrado == False) :
+                        print ("")
+                        print (" =================================== ")
+                        print ("")
+                        print ("        TRAINER NO DISPONIBLE         ")
+                        print ("")
+                        print (" =================================== ")
+                        print ("")
+                        break 
+            if ruta_encontrada == False :
+                print ("")
+                print (" =================================== ")
+                print ("")
+                print ("        RUTA NO ENCONTRADA           ")
+                print ("")
+                print (" =================================== ")
+                break
+        elif respuesta.lower() == "no" :
+            print ("")
+            print (" Volviendo al menu... ")
+            print ("")
+            break
     return

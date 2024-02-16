@@ -1,22 +1,41 @@
 [
     {
-        "Netcore": [
-
-        ]
+        "Netcore": []
     },
     {
-        "Java": [
-
-        ]
+        "Java": []
     },
     {
         "NodeJs": [
-
+            {
+                "identificacion": 189232,
+                "nombres": "juanito",
+                "apellidos": "alima\u00f1a",
+                "direccion": "carrera 6",
+                "acudiente": "cha",
+                "telefonos": {
+                    "celular": "21389023",
+                    "fijo": "23892"
+                },
+                "Prueba": 80,
+                "estado": "Aprobado"
+            }
         ]
     },
     {
         "python": [
-
+            {
+                "trainer": [
+                    {
+                        "identificacion": 12345,
+                        "nombre": "Juan",
+                        "apellidos": "mari\u00f1o",
+                        "Especialidad": "java",
+                        "horario": "diurno",
+                        "Celular": "317819"
+                    }
+                ]
+            }
         ]
     }
 ]

@@ -1,79 +1,78 @@
 import json 
 def Listados_Opciones (opcion): 
     while True : 
-        if opcion == 1 : 
-            print ("")
-            print (" ================================================================  ")
-            print ("")
-            print ("  Bienvenido a la opcion para ver  el listado de campers inscritos ")
-            print ("")
-            print (" ================================================================ ")
-            print ("") 
-            Lista_Inscritos()
-            break 
-        elif opcion == 2 : 
-            print ("")
-            print (" =====================================================================  ")
-            print ("")
-            print ("  Bienvenido a la opcion para ver los campers que aprobaron la prueba ")
-            print ("")                             
-            print (" =====================================================================  ")
-            print ("") 
-            Mostrar_Prueba()
-            break
-        elif opcion == 3 : 
-            print ("")
-            print (" ==================================================================  ")
-            print ("")
-            print ("         Bienvenido a la opcion para ver los Trainers Trabajando    ")
-            print ("")
-            print (" ================================================================== ")
-            print ("") 
-            Mostrar_Trainer()
-            break
-        elif opcion == 4 :
-            print ("")
-            print (" ======================================================================  ")
-            print ("")
-            print ("  Bienvenido a la opcion para Listar los Campers con bajo Rendimiento ")
-            print ("")
-            print (" ====================================================================== ")
-            print ("") 
-            Bajo_Rendimiento()
-            break 
-        elif opcion == 5 : 
-            print ("")
-            print (" ==================================================================  ")
-            print ("")
-            print ("      Bienvenido a la opcion Para listar estadisticas de modulos     ")
-            print ("")
-            print (" ================================================================== ")
-            print ("") 
-            Notas()
-            break
-        elif opcion == 6 : 
-            print ("")
-            print (" ==================================================================  ")
-            print ("")
-            print ("       Bienvenido a la opcion para Listar las Rutas y asociados       ")
-            print ("")
-            print (" ================================================================== ")
-            print ("") 
-            Notas()
-            break
-        elif opcion == 7 : 
-            print ("")
-            print (" Saliendo...")
-            print ("")
-            break
-        else : 
+        try : 
+            if opcion == 1 : 
+                print ("")
+                print (" ================================================================  ")
+                print ("")
+                print ("  Bienvenido a la opcion para ver  el listado de campers inscritos ")
+                print ("")
+                print (" ================================================================ ")
+                print ("") 
+                Lista_Inscritos()
+                break 
+            elif opcion == 2 : 
+                print ("")
+                print (" =====================================================================  ")
+                print ("")
+                print ("  Bienvenido a la opcion para ver los campers que aprobaron la prueba    ")
+                print ("")                             
+                print (" =====================================================================  ")
+                print ("") 
+                Mostrar_Prueba()
+                break
+            elif opcion == 3 : 
+                print ("")
+                print (" ==================================================================  ")
+                print ("")
+                print ("         Bienvenido a la opcion para ver los Trainers Trabajando    ")
+                print ("")
+                print (" ================================================================== ")
+                print ("") 
+                Mostrar_Trainer()
+                break
+            elif opcion == 4 :
+                print ("")
+                print (" ==================================================================  ")
+                print ("")
+                print ("   Bienvenido a la opcion para ver los Campers con Bajo Rendimiento   ")
+                print ("")
+                print (" ================================================================== ")
+                print ("") 
+                Bajo_Rendimiento()
+                break
+            elif opcion == 5 :
+                print ("")
+                print (" ======================================================================  ")
+                print ("")
+                print ("       Bienvenido a la opcion para Listar las Rutas y sus asociados       ")
+                print ("")
+                print (" ====================================================================== ")
+                print ("") 
+                imprimir_estudiantes_y_entrenadores()
+                print ("")
+                break
+            elif opcion == 6 : 
+                print ("")
+                print (" ======================================================================  ")
+                print ("")
+                print ("     Bienvenido a la opcion para Listar las Estadisticas de los Modulo     ")
+                print ("")
+                print (" ====================================================================== ")
+                print ("") 
+                Estadisticas_Modulos()
+                break
+            elif opcion == 7 : 
+                print ("")
+                print (" Saliendo...")
+                print ("")
+                break
+        except Exception : 
             print ("")
             print (" ERROR INGRESE UNA OPCION VALIDAD " )
             print ("") 
             continue 
-        
-
-
     return
 def Lista_Inscritos(): 
     with open ('estudiantes.json', 'r') as estudiantes_file : 
@@ -223,3 +222,101 @@ def Bajo_Rendimiento():
             break
     return 
 
+def imprimir_estudiantes_y_entrenadores():
+    with open ('Rutas.json', 'r') as rutas_file : 
+        data_rutas = json.load(rutas_file)
+    while True : 
+        print ("")
+        respuesta = input(" ¿Desea saber qué Campers y Trainers trabajan en cada Ruta? : ")
+        print ("")
+        if respuesta.lower() == "si": 
+            for modulo in data_rutas:
+                for nombre_modulo, estudiantes_y_entrenadores in modulo.items():
+                    print(f"Estudiantes y entrenadores en el módulo '{nombre_modulo}':")
+                if not estudiantes_y_entrenadores:
+                    print ("")
+                    print("No hay Campers ni Trainers en este módulo.")
+                    print ("")
+                else:
+                    for estudiante_o_entrenador in estudiantes_y_entrenadores:
+                        if "identificacion" in estudiante_o_entrenador:
+                            print("Estudiante:")
+                            print(f"  Nombres: {estudiante_o_entrenador['nombres']}")
+                            print(f"  Apellidos: {estudiante_o_entrenador['apellidos']}")
+                            print(f"  Dirección: {estudiante_o_entrenador['direccion']}")
+                            print(f"  Acudiente: {estudiante_o_entrenador['acudiente']}")
+                        elif "trainer" in estudiante_o_entrenador:
+                            trainer = estudiante_o_entrenador["trainer"][0]
+                            print("Entrenador:")
+                            print(f"  Nombre: {trainer['nombre']} {trainer['apellidos']}")
+                            print(f"  Especialidad: {trainer['Especialidad']}")
+                            print(f"  Horario: {trainer['horario']}")
+                            print(f"  Celular: {trainer['Celular']}")
+                    print()  
+        elif respuesta.lower() == "no" : 
+            print ("")
+            print (" volviendo al menu... ")
+            print ("")
+            break 
+    return
+
+def Estadisticas_Modulos():
+    with open('Notas.json', 'r') as notas_file:
+        data_notas = json.load(notas_file)
+    
+    while True:
+        print("")
+        respuesta = input("¿Desea saber Cuales son las estadisticas de los Modulos?: ")
+        print("")
+        if respuesta.lower() == "si":
+            # Crear un diccionario para almacenar la cantidad de estudiantes por módulo
+            estudiantes_por_modulo = {}
+
+            # Contar la cantidad de estudiantes en cada módulo
+            for grupo in data_notas:
+                for modulo in grupo['modulos']:
+                    nombre_modulo = modulo['nombre']
+                    cantidad_estudiantes = len(modulo['notas'])
+                    estudiantes_por_modulo[nombre_modulo] = cantidad_estudiantes
+            
+            # Ordenar los módulos por la cantidad de estudiantes de manera descendente
+            modulos_ordenados = sorted(estudiantes_por_modulo.items(), key=lambda x: x[1], reverse=True)
+
+            # Mostrar la información de cada módulo
+            for nombre_modulo, cantidad_estudiantes in modulos_ordenados:
+                print(f"Módulo: {nombre_modulo}")
+                print(f"Cantidad de Estudiantes: {cantidad_estudiantes}")
+                print ("")
+                for grupo in data_notas:
+                    for modulo in grupo['modulos']:
+                        if modulo['nombre'] == nombre_modulo:
+                            print("Grupo:")
+                            print ("")
+                            print(f"  Nombre: {grupo['nombre']}")
+                            print(f"  Horario: {grupo['horario']}")
+                            print(f"  Inicio: {grupo['Inicio']}")
+                            print(f"  Final: {grupo['Final']}")
+                            print ("")
+                            print("Trainer:")
+                            print ("")
+                            print(f"  Nombre: {grupo['trainer']['nombre']} {grupo['trainer']['apellidos']}")
+                            print(f"  Especialidad: {grupo['trainer']['Especialidad']}")
+                            print(f"  Horario: {grupo['trainer']['horario']}")
+                            print(f"  Celular: {grupo['trainer']['Celular']}")
+                            print ("")
+                            print("Estudiantes:")
+                            print ("")
+                            for estudiante in modulo['notas']:
+                                print(f"  Nombre: {estudiante['nombre']}")
+                                print(f"    Nota Teórica: {estudiante['NotaT']}")
+                                print(f"    Nota Práctica: {estudiante['NotaP']}")
+                                print(f"    Nota Quizes: {estudiante['NotaQ']}")
+                                print(f"    Nota Final: {estudiante['NotaF']}")
+                                print ("")
+                print("---------------------------------------")
+                print ("")
+
+        elif respuesta.lower() == "no":
+            print("")
+            print("Volviendo al menú principal...")
+            break
