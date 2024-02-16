@@ -5,7 +5,6 @@ import campers
 import Listados
 
 while True: 
-    try : 
         opc = menus.Menu_Principal() 
         if opc == 1 : 
             opc_Coordinador = menus.Menu_Coordinador() 
@@ -24,8 +23,3 @@ while True:
             print (" saliendo... ")
             print ("")
             break 
-    except Exception : 
-        print ("")
-        print (" ERROR INGRESE UNA OPCION VALIDAD ")
-        print ("") 
-        continue 

@@ -454,7 +454,7 @@ def Rutas(opcion):
             data_rutas = json.load(rutas_file) 
         
         for ruta in data_rutas:
-            for nombre_ruta, estudiantes in ruta.items():
+            for nombre_ruta,  estudiantes in ruta.items():
                 print(f"Ruta: {nombre_ruta}")
                 if not estudiantes:
                     print ("")
@@ -477,7 +477,6 @@ def Rutas(opcion):
                         print(f"    Prueba: {estudiante['Prueba']}")
                         print ("")
                         print ("=========================================================")
-                        break
     elif opcion == 4 : 
         print ("")
         print ("saliendo...".rjust(20))
