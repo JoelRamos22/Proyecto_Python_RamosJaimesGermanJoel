@@ -3,11 +3,11 @@ def Campers_Opciones(opciones) :
     while True : 
         if opciones == 1 : 
             print ("")
-            print (" ================================================================  ".center(120)))
+            print (" ================================================================  ".center(120))
             print ("")
-            print ("   Bienvenido a la opcion para ver a que grupo ha sido asignado   ".center(120)))
+            print ("   Bienvenido a la opcion para ver a que grupo ha sido asignado   ".center(120))
             print ("")
-            print (" ================================================================ ".center(120)))
+            print (" ================================================================ ".center(120))
             print ("") 
             Info()
             break 

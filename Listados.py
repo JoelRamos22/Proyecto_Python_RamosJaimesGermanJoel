@@ -4,11 +4,11 @@ def Listados_Opciones (opcion):
         try : 
             if opcion == 1 : 
                 print ("")
-                print (" ================================================================  ".center(120)))
+                print (" ================================================================  ".center(120))
                 print ("")
-                print ("  Bienvenido a la opcion para ver  el listado de campers inscritos ".center(120)))
+                print ("  Bienvenido a la opcion para ver  el listado de campers inscritos ".center(120))
                 print ("")
-                print (" ================================================================ ".center(120)))
+                print (" ================================================================ ".center(120))
                 print ("") 
                 Lista_Inscritos()
                 break 
