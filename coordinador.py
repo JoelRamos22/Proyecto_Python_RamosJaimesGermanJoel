@@ -88,6 +88,7 @@ def Coordinador_Opciones(opcion):
             continue
         
 
+
 def Lista_Participantes():
     print ("")
     print("Entrando a la lista de Estudiantes Inscritos:".rjust(20))
@@ -343,7 +344,7 @@ def Rutas(opcion):
                 print ("")
                 print ("=====================================".rjust(20))
                 print ("")
-                print ("       Ingrese el nombre de la nueva Ruta".rjust(20))
+                print (" Ingrese el nombre de la nueva Ruta".rjust(20))
                 print ("")
                 print ("=====================================".rjust(20))
                 print ("")
@@ -417,19 +418,19 @@ def Rutas(opcion):
                     if ruta_Name in ruta :
                         print ("=====================================".rjust(20))
                         print ("")
-                        print (" Ruta encontrada ".rjust(20))
+                        print ("      Ruta encontrada ".rjust(20))
                         print ("")
                         print ("=====================================".rjust(20))
                         ruta_Encontrada = True
                         for estudiantes in data_estudiantes[1]['estudiantesInscritos']:
                             if estudiantes['identificacion'] == estudiante_Id: 
                                 print ("")
-                                print (" Estudiante encontrado".rjust(20))
+                                print ("   Estudiante encontrado".rjust(20))
                                 print ("")
                                 print ("=====================================".rjust(20))
                                 ruta[ruta_Name].append(estudiantes)
                                 print ("")
-                                print (" Estudiante añadido a la ruta ".rjust(20))
+                                print ("  Estudiante añadido a la ruta ".rjust(20))
                                 print ("")
                                 print ("=====================================".rjust(20))
                                 with open ('Rutas.json', 'w') as rutas_file :
@@ -459,7 +460,7 @@ def Rutas(opcion):
                     print ("")
                     print("No hay estudiantes asignados a esta ruta.".rjust(20))
                     print ("")
-                    print ("=====================================".rjust(20))
+                    print ("========================================".rjust(20))
                 else:
                     print("Estudiantes asignados a esta ruta:".rjust(20))
                     print ("")
@@ -606,11 +607,11 @@ def Matriculas() :
                         input("Presione Enter para continuar...")
                     pagina_actual += 1
             print ("") 
-            print ("=====================================".rjust(20))
+            print ("=======================================".rjust(20))
             print ("")
-            print ("   ¿ Desea añadir un estudiante al  grupo ?     ".rjust(20))
+            print (" ¿Desea añadir un estudiante al  grupo?  :   ".rjust(20))
             print ("")
-            print ("=====================================".rjust(20))
+            print ("=======================================".rjust(20))
             print ("")
             capacidad_salon = 33 
             while True: 
@@ -648,7 +649,7 @@ def Matriculas() :
             print ("")
             print ("=====================================".rjust(20))
             print ("")
-            print (" ¿ A que salon desea añadir el nuevo grupo ? ".rjust(20))
+            print ("¿A que salon desea añadir el nuevo grupo? :  ".rjust(20))
             print ("")
             print ("=====================================".rjust(20))
             print ("")
@@ -702,7 +703,7 @@ def Trainer_Ruta () :
                     print ("")
                     print ("=====================================".rjust(20))
                     print ("")
-                    print ("        RUTA ENCONTRADA           ".rjust(20))
+                    print ("          RUTA ENCONTRADA           ".rjust(20))
                     print ("")
                     print ("=====================================".rjust(20))
                     print ("") 

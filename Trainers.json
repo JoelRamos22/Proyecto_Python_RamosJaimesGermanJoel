@@ -22,5 +22,13 @@
         "Especialidad": "fullstack",
         "horario": "nocturno",
         "Celular": "312345678"
+    },
+    {
+        "identificacion": 11234123,
+        "nombre": "yuca",
+        "apellidos": "mazorca",
+        "Especialidad": "regueton",
+        "horario": "diurno",
+        "Celular": "11231452w3"
     }
 ]

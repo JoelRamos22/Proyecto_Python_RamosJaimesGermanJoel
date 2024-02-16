@@ -196,7 +196,7 @@
                     "fijo": "1234567"
                 },
                 "estado": "Aprobado",
-                "Prueba": 80
+                "Prueba": 75
             },
             {
                 "identificacion": 987654321,
@@ -222,7 +222,7 @@
                     "fijo": "8901234"
                 },
                 "estado": "Aprobado",
-                "Prueba": 80
+                "Prueba": 30
             },
             {
                 "identificacion": 135792468,
@@ -235,7 +235,7 @@
                     "fijo": "7894561"
                 },
                 "estado": "Aprobado",
-                "Prueba": 80
+                "Prueba": 50
             },
             {
                 "identificacion": 246801357,
@@ -248,7 +248,7 @@
                     "fijo": "1357924"
                 },
                 "estado": "Aprobado",
-                "Prueba": 80
+                "Prueba": 40
             },
             {
                 "identificacion": 369258147,
@@ -365,7 +365,7 @@
                     "fijo": "3691478"
                 },
                 "estado": "Aprobado",
-                "Prueba": 80
+                "Prueba": 65
             },
             {
                 "identificacion": 852369147,
@@ -378,7 +378,7 @@
                     "fijo": "3698521"
                 },
                 "estado": "Aprobado",
-                "Prueba": 80
+                "Prueba": 60
             },
             {
                 "identificacion": 19283,
@@ -390,7 +390,7 @@
                     "celular": "3178192801",
                     "fijo": "8192801"
                 },
-                "Prueba": 80,
+                "Prueba": 100,
                 "estado": "Aprobado"
             },
             {
@@ -403,20 +403,7 @@
                     "celular": "21389023",
                     "fijo": "23892"
                 },
-                "Prueba": 80,
-                "estado": "Aprobado"
-            },
-            {
-                "identificacion": 1,
-                "nombres": "p",
-                "apellidos": "i",
-                "direccion": "8",
-                "acudiente": "o",
-                "telefonos": {
-                    "celular": "9",
-                    "fijo": "4"
-                },
-                "Prueba": 80,
+                "Prueba": 79,
                 "estado": "Aprobado"
             }
         ]
