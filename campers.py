@@ -3,31 +3,31 @@ def Campers_Opciones(opciones) :
     while True : 
         if opciones == 1 : 
             print ("")
-            print (" ================================================================  ")
+            print (" ================================================================  ".center(120)))
             print ("")
-            print ("   Bienvenido a la opcion para ver a que grupo ha sido asignado   ")
+            print ("   Bienvenido a la opcion para ver a que grupo ha sido asignado   ".center(120)))
             print ("")
-            print (" ================================================================ ")
+            print (" ================================================================ ".center(120)))
             print ("") 
             Info()
             break 
         elif opciones == 2 : 
             print ("")
-            print (" ==================================================================  ")
+            print (" ==================================================================  ".center(120))
             print ("")
-            print ("              Bienvenido a la opcion para Ver sus notas              ")
+            print ("              Bienvenido a la opcion para Ver sus notas              ".center(120))
             print ("")
-            print (" ==================================================================  ")
+            print (" ==================================================================  ".center(120))
             print ("") 
             Notas()
             break
         elif opciones == 3 : 
             print ("")
-            print (" ==================================================================  ")
+            print (" ==================================================================  ".center(120))
             print ("")
-            print ("          Bienvenido a la opcion para ver su estado actual           ")
+            print ("          Bienvenido a la opcion para ver su estado actual           ".center(120))
             print ("")
-            print (" ================================================================== ")
+            print (" ================================================================== ".center(120))
             print ("") 
             Estado()
             break
