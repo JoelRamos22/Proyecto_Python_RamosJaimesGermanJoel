@@ -2,6 +2,7 @@ import menus
 import coordinador
 import trainer
 import campers
+import Listados
 
 while True: 
         opc = menus.Menu_Principal() 
@@ -15,10 +16,10 @@ while True:
             opc_camper  = menus.Menu_Estudiantes()
             campers.Campers_Opciones(opc_camper)
         elif opc == 4 : 
+            opc_listado = menus.Lista_Reportes()
+            Listados.Listados_Opciones(opc_listado)
+        elif opc == 5 : 
             print ("")
-            print (" saliendo...")
+            print (" saliendo... ")
             print ("")
-            break
-        
-        
-        
+            break 

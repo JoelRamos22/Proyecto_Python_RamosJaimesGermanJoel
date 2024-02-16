@@ -25,7 +25,7 @@ def Trainer_Opciones (opcion):
             print ("")
             print (" ==================================================================  ")
             print ("")
-            print ("   Bienvenido a la opcion para actualizar las notas de sus campers  ")
+            print ("          Bienvenido a la opcion para Listar los entrenadores        ")
             print ("")
             print (" ================================================================== ")
             print ("") 
@@ -33,9 +33,13 @@ def Trainer_Opciones (opcion):
             break
         elif opcion == 4 :
             print ("")
-            print (" Saliendo...")
+            print (" ==================================================================  ")
             print ("")
-            break 
+            print ("          Bienvenido a la opcion para Listar los entrenadores        ")
+            print ("")
+            print (" ================================================================== ")
+            print ("") 
+            Notas()
         else : 
             print ("")
             print (" ERROR INGRESE UNA OPCION VALIDAD " )
