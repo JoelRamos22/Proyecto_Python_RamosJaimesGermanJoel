@@ -5,7 +5,7 @@ def Trainer_Opciones (opcion):
             print ("")
             print (" ================================================================  ")
             print ("")
-            print ("   Bienvenido a la opcion para ver la informacion de su curso  ")
+            print ("   Bienvenido a la opcion para ver la informacion de su curso     ")
             print ("")
             print (" ================================================================ ")
             print ("") 
@@ -25,7 +25,7 @@ def Trainer_Opciones (opcion):
             print ("")
             print (" ==================================================================  ")
             print ("")
-            print ("          Bienvenido a la opcion para Listar los entrenadores        ")
+            print ("          Bienvenido a la opcion para ver las Notas de su curso       ")
             print ("")
             print (" ================================================================== ")
             print ("") 
@@ -33,13 +33,8 @@ def Trainer_Opciones (opcion):
             break
         elif opcion == 4 :
             print ("")
-            print (" ==================================================================  ")
-            print ("")
-            print ("          Bienvenido a la opcion para Listar los entrenadores        ")
-            print ("")
-            print (" ================================================================== ")
-            print ("") 
-            Notas()
+            print (" saliendo..." ) 
+            break 
         else : 
             print ("")
             print (" ERROR INGRESE UNA OPCION VALIDAD " )

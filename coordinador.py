@@ -3,14 +3,13 @@ import time
 def Coordinador_Opciones(opcion):   
     while True:
         if opcion == 1:
-            print(" ============================== ")
+            print("\n ¿ Que listado desea conocer ?".rjust(20))
             print("")
-            print("\n ¿ Que listado desea conocer ?")
-            print("")
-            print(" ============================== ")
-            listado = input (" Trainers / Campers : ")
+            print ("=====================================".rjust(20))
             print ("")
-            print(" ================================= ")
+            listado = input (" Trainers / Campers : ".rjust(20))
+            print ("")
+            print ("=====================================".rjust(20))
             if listado.lower() == "trainers": 
                 Lista_Trainers()
                 break
@@ -18,19 +17,19 @@ def Coordinador_Opciones(opcion):
                 Lista_Participantes()
                 break
         elif opcion == 3:
-            print(" ========================================= ")
-            print("|                                        |")
-            print("|  Bienvenido a la opción para asignar   |")
-            print("|                 notas                  |")
-            print("|                                        |")
-            print(" ========================================= ")
+            print(" ========================================= ".center(120))
+            print("|                                        |".center(120))
+            print("|  Bienvenido a la opción para asignar   |".center(120))
+            print("|                 notas                  |".center(120))
+            print("|                                        |".center(120))
+            print(" ========================================= ".center(120))
             print("") 
             AsignarPruebasN()
             break 
         elif opcion == 2:
-            print (" Que desea Registrar : ")
+            print (" Que desea Registrar : ".rjust(20))
             print ("")
-            respuestas = input ( " Trainer / Camper : ")
+            respuestas = input ( " Trainer / Camper : ".rjust(20))
             print ("")
             if respuestas.lower() == "trainer": 
                 print(" ========================================= ")
@@ -53,44 +52,45 @@ def Coordinador_Opciones(opcion):
                 Registrar_Estudiantes()
                 break
         elif opcion == 4:
-            print("  ╔════════════════════════════════════╗  ")
-            print("  ║            MENÚ RUTAS              ║  ")
-            print("  ╠════════════════════════════════════╣  ")
-            print("  ║ 1. Crear Rutas                     ║  ")
-            print("  ║ 2. Asignar Rutas                   ║  ")
-            print("  ║ 3. Ver Rutas                       ║  ")
-            print("  ║ 4. Salir                           ║  ")
-            print("  ╚════════════════════════════════════╝  ")
+            print("  ╔════════════════════════════════════╗  ".center(120))
+            print("  ║            MENÚ RUTAS              ║  ".center(120))
+            print("  ╠════════════════════════════════════╣  ".center(120))
+            print("  ║ 1. Crear Rutas                     ║  ".center(120))
+            print("  ║ 2. Asignar Rutas                   ║  ".center(120))
+            print("  ║ 3. Ver Rutas                       ║  ".center(120))
+            print("  ║ 4. Salir                           ║  ".center(120))
+            print("  ╚════════════════════════════════════╝  ".center(120))
             print("") 
-            opciones = int(input( " Ingrese la opcion que Desea usar : "))
+            opciones = int(input( " Ingrese la opcion que Desea usar : ".rjust(20)))
             print ("")
-            print (" ================================================== ")
+            print ("=====================================".rjust(20))
             Rutas(opciones)
             break 
         elif opcion == 5:
             print ("")
-            print(" ========================================= ")
-            print("|                                        |")
-            print("|  Bienvenido a la opción de             |")
-            print("|                 Matriculas             |")
-            print("|                                        |")
-            print(" ========================================= ")
+            print(" ========================================= ".center(120))
+            print("|                                        |".center(120))
+            print("|  Bienvenido a la opción de             |".center(120))
+            print("|                 Matriculas             |".center(120))
+            print("|                                        |".center(120))
+            print(" ========================================= ".center(120))
             print("") 
             Matriculas()
             break
         elif opcion == 6:
             print ("")
-            print(" Saliendo... ")
+            print(" Saliendo... ".rjust(20))
             print ("")
             break
         else  : 
-            print ("\n Error, ingrese una opcion valida ")
+            print ("\n Error, ingrese una opcion valida ".rjust(20))
             print ("")
             continue
         
 
 def Lista_Participantes():
-    print("Entrando a la lista de Estudiantes Inscritos:")
+    print ("")
+    print("Entrando a la lista de Estudiantes Inscritos:".rjust(20))
     print("")
 
     with open('estudiantes.json', 'r') as estudiantes_file:
@@ -127,20 +127,20 @@ def Lista_Participantes():
             input("Presione Enter para continuar...")
         
         pagina_actual += 1
-
-    # Una vez que se sale del bucle, regresamos al menú principal
-    print("¿ Desea ver la lista de estudiantes Cursando el ciclo ?") 
+    print ("")
+    print("¿ Desea ver la lista de estudiantes Cursando el ciclo ?".rjust(20)) 
     print ("")
     respuesta = input()
     if respuesta.lower() == "si" : 
         Lista_Participantes_Cursando()
     else : 
         print ("")
-        print (" Saliendo...")
+        print (" Saliendo...".rjust(20))
         return 
     return
 def Lista_Participantes_Cursando():
-    print("Entrando a la lista de Estudiantes Cursando el ciclo :")
+    print ("")
+    print("Entrando a la lista de Estudiantes Cursando el ciclo :".rjust(20))
     print("")
 
     with open('estudiantes.json', 'r') as estudiantes_file:
@@ -177,8 +177,9 @@ def Lista_Participantes_Cursando():
             input("Presione Enter para continuar...")
         pagina_actual += 1 
     return
-def Lista_Trainers() : 
-    print("Entrando a la lista de Trainers:")
+def Lista_Trainers() :
+    print ("")
+    print("Entrando a la lista de Trainers:".rjust(20))
     print("") 
     
     with open('trainers.json', 'r') as trainers_file:
@@ -217,47 +218,47 @@ def AsignarPruebasN():
         estudiantes_data = json.load(estudiantes_file)
     
     for estudiante in estudiantes_data[1]['estudiantesInscritos'] : 
-        print(" ═══════════════════════════════════════════════════════")
-        print(f"      Ingrese la nota del estudiante: {estudiante['nombres']}")
-        print(" ═══════════════════════════════════════════════════════")
+        print(" ═══════════════════════════════════════════════════════".rjust(20))
+        print(f"      Ingrese la nota del estudiante: {estudiante['nombres']}".rjust(20))
+        print(" ═══════════════════════════════════════════════════════".rjust(20))
         print ("")
         while True:
-            prueba = int(input(" Nota (0-100): "))
+            prueba = int(input(" Nota (0-100): ".rjust(20)))
             print ("")
             if 0 <= prueba <= 100:
                 estudiante['Prueba'] = prueba
                 break
             else:
-                print(" Por favor, ingrese una nota válida (entre 0 y 100).")
+                print(" Por favor, ingrese una nota válida (entre 0 y 100):".rjust(20))
                 print("")
         if prueba > 60 : 
             print ("")
-            print (" El estudiante ha pasado la prueba de registro ")
+            print (" El estudiante ha pasado la prueba de registro ".rjust(20))
             estudiante['estado'] = "Aprobado"
             
     with open('estudiantes.json', 'w') as estudiantes_file: 
         json.dump(estudiantes_data, estudiantes_file, indent=4)
     print ("")
-    print (" Las notas de la prueba han sido añadidas exitosamente ")
-    print (" ======================================================")
+    print (" Las notas de la prueba han sido añadidas exitosamente ".rjust(20))
+    print ("=====================================".rjust(20))
     return 
 def Registrar_Estudiantes() : 
     with open ('estudiantes.json', 'r') as estudiantes_file : 
         data_estudiantes = json.load(estudiantes_file)
     print ("")    
-    print (" ¿ Desea añadir algun estudiante ? ")
+    print (" ¿ Desea añadir algun estudiante ? ".rjust(20))
     print ("")
-    print (" ==============================================")
+    print ("=====================================".rjust(20))
     print ("")
     while True :
-        respuesta = input (" si o no : ")
+        respuesta = input (" si o no : ".rjust(20))
         if respuesta.lower() == "si" : 
             print ("")
-            print (" ==============================================")
+            print ("=====================================".rjust(20))
             print ("")
-            print (" Ingrese los datos del estudiante")
+            print (" Ingrese los datos del estudiante".rjust(20))
             print ("")
-            print (" ==============================================")
+            print ("=====================================".rjust(20))
             print ("")
             Estudiante = {
                 'identificacion' : (int(input("identificacion : "))),
@@ -276,15 +277,15 @@ def Registrar_Estudiantes() :
                 json.dump(data_estudiantes, estudiantes_file, indent=4)
             
             print ("") 
-            print (" ESTUDIANTE AÑADIDO CON EXITO ")
+            print (" ESTUDIANTE AÑADIDO CON EXITO ".rjust(20))
                 
             print ("")
-            print (" ==============================================")
+            print ("=====================================".rjust(20))
             print ("")
-            print (" ¿ Desea añadir otro estudiante ?")
+            print (" ¿ Desea añadir otro estudiante ?".rjust(20))
             print ("")
         elif respuesta.lower() == "no": 
-            print (" Volviendo al menu...")
+            print (" Volviendo al menu...".rjust(20))
             break
     return
 def Registrar_Trainers(): 
@@ -292,9 +293,9 @@ def Registrar_Trainers():
         data_trainers = json.load(trainers_file) 
     
     print ("")    
-    print (" ¿ Desea añadir algun Trainer ? ")
+    print (" ¿ Desea añadir algun Trainer ? ".rjust(20))
     print ("")
-    print (" ==============================================")
+    print ("=====================================".rjust(20))
     print ("")
     while True : 
         respuesta = input (" si o no : ")
@@ -313,38 +314,38 @@ def Registrar_Trainers():
             with open ('trainers.json', 'w') as trainers_file : 
                 json.dump(data_trainers, trainers_file, indent=4) 
             print ("") 
-            print (" TRAINER AÑADIDO CON EXITO ")
+            print (" TRAINER AÑADIDO CON EXITO ".rjust(20))
             print ("")
-            print (" ==============================================")
+            print ("=====================================".rjust(20))
             print ("")
-            print (" ¿ Desea añadir otro Trainer ?")
+            print (" ¿ Desea añadir otro Trainer ?".rjust(20))
             print ("")
         elif respuesta.lower() == "no": 
-            print (" Volviendo al menu...")
+            print (" Volviendo al menu...".rjust(20))
             break  
     return
 def Rutas(opcion): 
     if opcion == 1 : 
         with open ('Rutas.json', 'r') as rutas_file : 
             data_rutas = json.load(rutas_file) 
-        print(" ========================================= ")
-        print("|                                        |")
-        print("|  Bienvenido a la opción para Crear     |")
-        print("|                 Rutas                  |")
-        print("|                                        |")
-        print(" ========================================= ")
+        print(" ========================================= ".center(120))
+        print("|                                        |".center(120))
+        print("|  Bienvenido a la opción para Crear     |".center(120))
+        print("|                 Rutas                  |".center(120))
+        print("|                                        |".center(120))
+        print(" ========================================= ".center(120))
         print("") 
-        print (" ¿ Desea añadir una nueva Ruta ? ")
-        print ("")
+        print(" ¿Desea añadir una nueva Ruta? ".rjust(20))
+        print("")
         while True : 
-            respuesta = input ( " si o no : ")
+            respuesta = input ( " si o no : ".rjust(20))
             if respuesta.lower() == "si" : 
                 print ("")
-                print (" ==============================================")
+                print ("=====================================".rjust(20))
                 print ("")
-                print ("       Ingrese el nombre de la nueva Ruta"      )
+                print ("       Ingrese el nombre de la nueva Ruta".rjust(20))
                 print ("")
-                print (" ==============================================")
+                print ("=====================================".rjust(20))
                 print ("")
                 nombre = input()
                 nueva_ruta = {
@@ -352,14 +353,14 @@ def Rutas(opcion):
                 }
                 data_rutas.append(nueva_ruta)
                 print ("")
-                print ("  NUEVA AÑADIDA EXITO  ")
+                print ("  NUEVA AÑADIDA EXITO  ".rjust(20))
                 print ("")
-                print (" ====================================== ")
+                print ("=====================================".rjust(20))
                 with open ('Rutas.json', 'w') as rutas_file :
                     json.dump(data_rutas, rutas_file, indent=4)
             elif respuesta.lower() == "no": 
                 print ("")
-                print (" Volviendo al menu...")
+                print (" Volviendo al menu...".rjust(20))
                 break
 
     elif opcion == 2:
@@ -367,19 +368,21 @@ def Rutas(opcion):
             data_rutas = json.load(rutas_File)
         with open('estudiantes.json','r') as estudiantes_File : 
             data_estudiantes = json.load(estudiantes_File) 
-        print("")
-        print("  Bienvenido a la opcion para Asignar Rutas ")
-        print ("")
-        print("==============================================")
-        print("")
+        print(" ========================================= ".center(120))
+        print("|                                        |".center(120))
+        print("|  Bienvenido a la opción para Asignar   |".center(120))
+        print("|                 Rutas                  |".center(120))
+        print("|                                        |".center(120))
+        print(" ========================================= ".center(120))
+        print("") 
         while True:
             print("") 
-            print(" ¿ Desea añadir un estudiante ? ")
+            print(" ¿Desea añadir un estudiante? ".rjust(20))
             print("") 
-            respuesta = input(" si o no: ")
+            respuesta = input(" si o no: ".rjust(20))
             print ("")
             if respuesta.lower() == "si":
-                print(" Estudiantes disponibles : ")
+                print(" Estudiantes disponibles : ".rjust(20))
                 print ("")
                 for estudiante in data_estudiantes[1]['estudiantesInscritos']:
                     if estudiante["estado"] == "Aprobado": 
@@ -394,54 +397,54 @@ def Rutas(opcion):
                         print("║    Fijo:", estudiante["telefonos"]["fijo"])
                         print("║ Estado:", estudiante["estado"])
                         print ("")
-                print ("==============================")
+                print ("=====================================".rjust(20))
                 print ("")
-                print (" Las rutas disponibles son : ")
+                print (" Las rutas disponibles son : ".rjust(20))
                 print ("")
-                print ("==============================")
+                print ("=====================================".rjust(20))
                 print ("")
                 for ruta in data_rutas : 
                     for key, values in ruta.items() : 
                         print (f" Ruta: {key} ")
                         print ("")
                 print ("")
-                ruta_Name = input("¿ En qué ruta desea añadir el estudiante ? : ").strip()
+                ruta_Name = input("¿En qué ruta desea añadir el estudiante? : ".rjust(20)).strip()
                 print ("")
-                estudiante_Id=(int(input("(Identificacion del estudiante:) ")))
+                estudiante_Id=(int(input("Identificacion del estudiante: ".rjust(20))))
                 print ("")
                 ruta_Encontrada = False 
                 for ruta in data_rutas:
                     if ruta_Name in ruta :
-                        print ("===========================")
+                        print ("=====================================".rjust(20))
                         print ("")
-                        print (" Ruta encontrada ")
+                        print (" Ruta encontrada ".rjust(20))
                         print ("")
-                        print ("===========================")
+                        print ("=====================================".rjust(20))
                         ruta_Encontrada = True
                         for estudiantes in data_estudiantes[1]['estudiantesInscritos']:
                             if estudiantes['identificacion'] == estudiante_Id: 
                                 print ("")
-                                print (" Estudiante encontrado ")
+                                print (" Estudiante encontrado".rjust(20))
                                 print ("")
-                                print ("===========================")
+                                print ("=====================================".rjust(20))
                                 ruta[ruta_Name].append(estudiantes)
                                 print ("")
-                                print (" Estudiante añadido a la ruta ")
+                                print (" Estudiante añadido a la ruta ".rjust(20))
                                 print ("")
-                                print ("===========================")
+                                print ("=====================================".rjust(20))
                                 with open ('Rutas.json', 'w') as rutas_file :
                                     json.dump(data_rutas, rutas_file, indent=4)
                                 Trainer_Ruta()
                                 break
                         if ruta_Encontrada == False :
                             print ("")
-                            print (" Ruta no encontrada ")
+                            print (" Ruta no encontrada ".rjust(20))
             
             elif respuesta.lower() == "no": 
                 print ("")
                 Trainer_Ruta()
                 print ("")
-                print (" Volviendo al menu... ")
+                print (" Volviendo al menu... ".rjust(20))
                 print ("")
                 break
     
@@ -454,11 +457,11 @@ def Rutas(opcion):
                 print(f"Ruta: {nombre_ruta}")
                 if not estudiantes:
                     print ("")
-                    print("No hay estudiantes asignados a esta ruta.")
+                    print("No hay estudiantes asignados a esta ruta.".rjust(20))
                     print ("")
-                    print ("==========================================")
+                    print ("=====================================".rjust(20))
                 else:
-                    print("Estudiantes asignados a esta ruta:")
+                    print("Estudiantes asignados a esta ruta:".rjust(20))
                     print ("")
                     for estudiante in estudiantes:
                         print(f"  - Nombre: {estudiante['nombres']}")
@@ -476,7 +479,7 @@ def Rutas(opcion):
                         break
     elif opcion == 4 : 
         print ("")
-        print ("saliendo...")
+        print ("saliendo...".rjust(20))
     return
 def Matriculas() :
     with open('estudiantes.json','r') as estudiantes_File : 
@@ -489,18 +492,18 @@ def Matriculas() :
         data_salones = json.load(salones_File)
     while True : 
         print ("")
-        print (" ====================================")
+        print ("=====================================".rjust(20))
         print ("")
-        respuesta = input (" ¿ Desea crear un nuevo grupo ? : ")
+        respuesta = input (" ¿ Desea crear un nuevo grupo ? : ".rjust(20))
         print ("")
-        print (" ====================================")
+        print ("=====================================".rjust(20))
         if respuesta.lower() == "si" :
             print ("") 
-            print (" =================================== ")
+            print ("=====================================".rjust(20))
             print ("")
-            print (" | Ingrese el nombre del grupo  :   |")
+            print (" | Ingrese el nombre del grupo  :   |".rjust(20))
             print ("")
-            print (" =================================== ") 
+            print ("=====================================".rjust(20))
             print ("")
             nuevo_grupo = {
                 "nombre" : input("\n Nombre del grupo : "), 
@@ -511,7 +514,7 @@ def Matriculas() :
                 
             }
             print ("")
-            print (" TRAINERS DISPONIBLES : " )
+            print (" TRAINERS DISPONIBLES : ".rjust(20) )
             print ("")
             num_trainers = len(data_trainers)
             trainer_Por_pagina = 2
@@ -536,37 +539,37 @@ def Matriculas() :
                     respuesta = input(" Presione Enter para continuar ").lower()
                     if respuesta.lower() == 'salir':
                         print ("")
-                        print (" =================================================================== ")
+                        print ("=====================================".rjust(20))
                         print ("")
                         break
                     else : 
                         print ("")
-                        print (" =================================================================== ")
+                        print ("=====================================".rjust(20))
                         print ("")
                 else:
                     input(" Presione Enter para continuar... ")
                 pagina_actual += 1
                 
-            TrainerP = (int(input(" Ingrese la identificacion del trainer que sera el encargado del grupo : ")))
+            TrainerP = (int(input(" Ingrese la identificacion del trainer que sera el encargado del grupo : ".rjust(20))))
             validacion = False
             for trainer in data_trainers : 
                 if trainer["identificacion"] == TrainerP and trainer["horario"] == nuevo_grupo['horario']: 
                     nuevo_grupo["trainer"] = trainer
                     print ("")
-                    print (" =================================== ")
+                    print ("=====================================".rjust(20))
                     print ("")
-                    print ("        TRAINER ENCONTRADO           ")
+                    print ("        TRAINER ENCONTRADO           ".rjust(20))
                     print ("")
-                    print (" =================================== ")
+                    print ("=====================================".rjust(20))
                     validacion = True
                     break
             if(validacion == False): 
                     print ("")
-                    print (" =================================== ")
+                    print ("=====================================".rjust(20))
                     print ("")
-                    print ("        TRAINER NO DISPONIBLE         ")
+                    print ("        TRAINER NO DISPONIBLE         ".rjust(20))
                     print ("")
-                    print (" =================================== ")
+                    print ("=====================================".rjust(20))
                     return
             imprimir_Estudiantes = True
             if imprimir_Estudiantes == True :
@@ -603,15 +606,15 @@ def Matriculas() :
                         input("Presione Enter para continuar...")
                     pagina_actual += 1
             print ("") 
-            print (" ============================================== ")
+            print ("=====================================".rjust(20))
             print ("")
-            print ("   ¿ Desea añadir un estudiante al  grupo ?     ")
+            print ("   ¿ Desea añadir un estudiante al  grupo ?     ".rjust(20))
             print ("")
-            print (" ============================================== ")
+            print ("=====================================".rjust(20))
             print ("")
             capacidad_salon = 33 
             while True: 
-                respuesta1 = input (" si o no : ")
+                respuesta1 = input (" si o no : ".rjust(20))
                 print ("")
                 if respuesta1 == "si": 
                     Estudiante_Id = int(input(" Identificacion del estudiante : "))
@@ -620,56 +623,56 @@ def Matriculas() :
                             nuevo_grupo['estudiantes'].append(estudiante)
                             capacidad_salon = capacidad_salon - 1 
                             print ("")
-                            print (" =================================== ")
+                            print ("=====================================".rjust(20))
                             print ("")
-                            print ("        Estudiante Encontrado         ")
+                            print ("        Estudiante Encontrado         ".rjust(20))
                             print ("")
-                            print (" =================================== ")
+                            print ("=====================================".rjust(20))
                             print ("")
                             print (f" Capacidad actualizada del salon actualizada : {capacidad_salon}")
                             print ("")
                             print (" ¿ Desea añadir otro estudiante ? ")
                             print ("")
-                            print (" =================================== ")
+                            print ("=====================================".rjust(20))
                             if capacidad_salon == 0 : 
                                 print ("")
-                                print (" ===================================== ")
+                                print ("=====================================".rjust(20))
                                 print ("")
-                                print ("      CAPACIDAD DEL SALON EXCEDIDA     ")
+                                print ("      CAPACIDAD DEL SALON EXCEDIDA     ".rjust(20))
                                 print ("")
-                                print (" ===================================== ")
+                                print ("=====================================".rjust(20))
                                 print ("")
                                 break
                 if respuesta1 == "no": 
                             break
             print ("")
-            print (" ============================================ ")
+            print ("=====================================".rjust(20))
             print ("")
-            print (" ¿ A que salon desea añadir el nuevo grupo ? ")
+            print (" ¿ A que salon desea añadir el nuevo grupo ? ".rjust(20))
             print ("")
-            print (" ============================================ ")
+            print ("=====================================".rjust(20))
             print ("")
-            print (" Lista De Salones Disponibles : ")
+            print (" Lista De Salones Disponibles : ".rjust(20))
             for salon in data_salones : 
                 print ("")
                 print (salon["nombre"]) 
             print ("")
-            salon_Name = input (" Ingrese el nombre del salon al que quiere agregar el grupo : ")
+            salon_Name = input (" Ingrese el nombre del salon al que quiere agregar el grupo : ".rjust(20))
             for salon in data_salones :
                 if salon["nombre"] == salon_Name : 
                     salon["grupos"].append(nuevo_grupo)
                     print ("")
-                    print (" =================================== ")
+                    print ("=====================================".rjust(20))
                     print ("")
-                    print ("        SALON ENCONTRADO           ")
+                    print ("        SALON ENCONTRADO           ".rjust(20))
                     print ("")
-                    print (" =================================== ")
+                    print ("=====================================".rjust(20))
                     print ("")
-                    print ( "       NUEVO GRUPO AÑADIDO    ")
+                    print ( "       NUEVO GRUPO AÑADIDO    ".rjust(20))
                     break
         elif respuesta.lower() == "no" :
             print ("")
-            print (" Volviendo al menu... ")
+            print (" Volviendo al menu... ".rjust(20))
             print ("")
             break
         with open ('Salones.json', 'w') as salones_file : 
@@ -684,36 +687,36 @@ def Trainer_Ruta () :
         
     while True : 
         print ("")
-        respuesta = input(" ¿Desea añadir algun trainer? : ")
+        respuesta = input(" ¿Desea añadir algun trainer? : ".rjust(20))
         print ("")
         if respuesta.lower() == "si": 
             for ruta in data_rutas : 
                 for  key, values in ruta.items() : 
                     print ("")
-                    print ( f" Ruta :  {key}")
+                    print ( f" Ruta :  {key}".rjust(20))
                     print ("")
-            Ruta_Name = input (" Ingrese el nombre de la ruta : ")
+            Ruta_Name = input (" Ingrese el nombre de la ruta : ".rjust(20))
             ruta_encontrada = False  
             for ruta in data_rutas : 
                 if Ruta_Name in ruta : 
                     print ("")
-                    print (" =================================== ")
+                    print ("=====================================".rjust(20))
                     print ("")
-                    print ("        RUTA ENCONTRADA           ")
+                    print ("        RUTA ENCONTRADA           ".rjust(20))
                     print ("")
-                    print (" =================================== ")
+                    print ("=====================================".rjust(20))
                     print ("") 
                     ruta_encontrada = True 
                     trainer_encontrado = False 
-                    Id_trainer = int(input(" Ingrese la identificacion del trainer : "))
+                    Id_trainer = int(input(" Ingrese la identificacion del trainer : ".rjust(20)))
                     for trainer in data_trainer : 
                         if Id_trainer == trainer["identificacion"] : 
                             print ("")
-                            print (" =================================== ")
+                            print ("=====================================".rjust(20))
                             print ("")
-                            print ("        TRAINER  ENCONTRADO            ")
+                            print ("        TRAINER  ENCONTRADO            ".rjust(20))
                             print ("")
-                            print (" =================================== ")
+                            print ("=====================================".rjust(20))
                             print ("") 
                             trainer_encontrado = True 
                             nuevo_trainer = {
@@ -722,30 +725,30 @@ def Trainer_Ruta () :
                             nuevo_trainer['trainer'].append(trainer)
                             ruta[Ruta_Name].append(nuevo_trainer)
                             print ("")
-                            print (" TRAINER AÑADIDO CON EXITO")
+                            print (" TRAINER AÑADIDO CON EXITO".rjust(20))
                             print ("")
                             with open ('Rutas.json', 'w') as rutas_file : 
                                 json.dump(data_rutas, rutas_file, indent=4)
                     if (trainer_encontrado == False) :
                         print ("")
-                        print (" =================================== ")
+                        print ("=====================================".rjust(20))
                         print ("")
-                        print ("        TRAINER NO DISPONIBLE         ")
+                        print ("        TRAINER NO DISPONIBLE         ".rjust(20))
                         print ("")
-                        print (" =================================== ")
+                        print ("=====================================".rjust(20))
                         print ("")
                         break 
             if ruta_encontrada == False :
                 print ("")
-                print (" =================================== ")
+                print ("=====================================".rjust(20))
                 print ("")
-                print ("        RUTA NO ENCONTRADA           ")
+                print ("        RUTA NO ENCONTRADA           ".rjust(20))
                 print ("")
-                print (" =================================== ")
+                print ("=====================================".rjust(20))
                 break
         elif respuesta.lower() == "no" :
             print ("")
-            print (" Volviendo al menu... ")
+            print (" Volviendo al menu... ".rjust(20))
             print ("")
             break
     return

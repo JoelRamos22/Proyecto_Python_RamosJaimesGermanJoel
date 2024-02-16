@@ -34,7 +34,6 @@ def Campers_Opciones(opciones) :
         elif opciones == 4 :
             print ("")
             print (" Saliendo...")
-            print ("")
             break 
         else : 
             print ("")

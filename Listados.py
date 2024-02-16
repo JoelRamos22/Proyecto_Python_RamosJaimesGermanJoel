@@ -66,7 +66,6 @@ def Listados_Opciones (opcion):
             elif opcion == 7 : 
                 print ("")
                 print (" Saliendo...")
-                print ("")
                 break
         except Exception : 
             print ("")
