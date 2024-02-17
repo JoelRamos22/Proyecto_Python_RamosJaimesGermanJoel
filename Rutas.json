@@ -25,7 +25,16 @@
     {
         "python": [
             {
-
+                "trainer": [
+                    {
+                        "identificacion": 12345,
+                        "nombre": "Juan",
+                        "apellidos": "mari\u00f1o",
+                        "Especialidad": "java",
+                        "horario": "diurno",
+                        "Celular": "317819"
+                    }
+                ]
             }
         ]
     }

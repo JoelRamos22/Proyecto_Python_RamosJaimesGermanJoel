@@ -32,22 +32,22 @@ def Coordinador_Opciones(opcion):
             respuestas = input ( " Trainer / Camper : ".rjust(20))
             print ("")
             if respuestas.lower() == "trainer": 
-                print(" ========================================= ")
-                print("|                                        |")
-                print("|  Bienvenido a la opción para registrar |")
-                print("|                 Trainers               |")
-                print("|                                        |")
-                print(" ========================================= ")
+                print(" ========================================= ".center(120))
+                print("|                                        |".center(120))
+                print("|  Bienvenido a la opción para registrar |".center(120))
+                print("|                 Trainers               |".center(120))
+                print("|                                        |".center(120))
+                print(" ========================================= ".center(120))
                 print("") 
                 Registrar_Trainers()
                 break
             elif respuestas.lower() == "camper":  
-                print(" ========================================= ")
-                print("|                                        |")
-                print("|  Bienvenido a la opción para registrar |")
-                print("|                 estudiantes            |")
-                print("|                                        |")
-                print(" ========================================= ")
+                print(" ========================================= ".center(120))
+                print("|                                        |".center(120))
+                print("|  Bienvenido a la opción para registrar |".center(120))
+                print("|                 estudiantes            |".center(120))
+                print("|                                        |".center(120))
+                print(" ========================================= ".center(120))
                 print("") 
                 Registrar_Estudiantes()
                 break
@@ -450,33 +450,44 @@ def Rutas(opcion):
                 break
     
     elif opcion == 3 :          
-        with open ('Rutas.json','r') as rutas_file : 
+        with open('Rutas.json', 'r') as rutas_file: 
             data_rutas = json.load(rutas_file) 
-        
+
         for ruta in data_rutas:
-            for nombre_ruta,  estudiantes in ruta.items():
+            for nombre_ruta, estudiantes_trainers in ruta.items():
+                print ("")
                 print(f"Ruta: {nombre_ruta}")
-                if not estudiantes:
+                print ("")
+                if not estudiantes_trainers:
                     print ("")
-                    print("No hay estudiantes asignados a esta ruta.".rjust(20))
+                    print("No hay estudiantes ni trainers asignados a esta ruta.")
                     print ("")
-                    print ("========================================".rjust(20))
                 else:
-                    print("Estudiantes asignados a esta ruta:".rjust(20))
-                    print ("")
-                    for estudiante in estudiantes:
-                        print(f"  - Nombre: {estudiante['nombres']}")
-                        print(f"    Apellidos: {estudiante['apellidos']}")
-                        print(f"    Identificación: {estudiante['identificacion']}")
-                        print(f"    Dirección: {estudiante['direccion']}")
-                        print(f"    Acudiente: {estudiante['acudiente']}")
-                        print(f"    Teléfonos:")
-                        print(f"      Celular: {estudiante['telefonos']['celular']}")
-                        print(f"      Fijo: {estudiante['telefonos']['fijo']}")
-                        print(f"    Estado: {estudiante['estado']}")
-                        print(f"    Prueba: {estudiante['Prueba']}")
-                        print ("")
-                        print ("=========================================================")
+                    for estudiante_trainer in estudiantes_trainers:
+                        if 'trainer' in estudiante_trainer:
+                            print("Trainer:")
+                            print ("")
+                            for trainer in estudiante_trainer['trainer']:
+                                print(f"  Nombre: {trainer['nombre']}")
+                                print(f"  Apellidos: {trainer['apellidos']}")
+                                print(f"  Identificación: {trainer['identificacion']}")
+                                print(f"  Especialidad: {trainer['Especialidad']}")
+                                print(f"  Horario: {trainer['horario']}")
+                                print(f"  Celular: {trainer['Celular']}")
+                                print("")
+                        else:
+                            print("Estudiante:")
+                            print(f"  Nombre: {estudiante_trainer['nombres']}")
+                            print(f"  Apellidos: {estudiante_trainer['apellidos']}")
+                            print(f"  Identificación: {estudiante_trainer['identificacion']}")
+                            print(f"  Dirección: {estudiante_trainer['direccion']}")
+                            print(f"  Acudiente: {estudiante_trainer['acudiente']}")
+                            print(f"  Teléfonos:")
+                            print(f"    Celular: {estudiante_trainer['telefonos']['celular']}")
+                            print(f"    Fijo: {estudiante_trainer['telefonos']['fijo']}")
+                            print(f"  Estado: {estudiante_trainer['estado']}")
+                            print(f"  Prueba: {estudiante_trainer['Prueba']}")
+                            print("")
     elif opcion == 4 : 
         print ("")
         print ("saliendo...".rjust(20))
