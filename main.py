@@ -20,10 +20,13 @@ while True:
             opc_listado = menus.Lista_Reportes()
             Listados.Listados_Opciones(opc_listado)
         elif opc == 5 : 
-            print ("")
-            print (" saliendo... ")
-            print ("")
-            break 
+            print ("") 
+            respuesta = input(" ¿Desea salir del sistema? : ")
+            if respuesta == "si": 
+                print ("") 
+                print (" saliendo... ") 
+                print ("") 
+                break
     except Exception : 
         print ("")
         print (" ERROR INGRESE UNA OPCION VALIDAD " )

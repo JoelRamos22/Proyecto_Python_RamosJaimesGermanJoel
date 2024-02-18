@@ -65,6 +65,16 @@ def Listados_Opciones (opcion):
                 break
             elif opcion == 7 : 
                 print ("")
+                print (" ======================================================================  ".center(120))
+                print ("")
+                print ("   Bienvenido a la opcion para Listar los Campers en estado de riesgo     ".center(120))
+                print ("")
+                print (" ====================================================================== ".center(120))
+                print ("") 
+                Estado_Riesgo()
+                break
+            elif opcion == 8 : 
+                print ("")
                 print (" Saliendo...")
                 break
         except Exception : 
@@ -319,3 +329,18 @@ def Estadisticas_Modulos():
             print("")
             print("Volviendo al menú principal...")
             break
+
+def Estado_Riesgo():
+    with open ('Notas.json', 'r') as notas_file : 
+        data_notas = json.load(notas_file)
+    for curso in data_notas:
+        for estudiante in curso["estudiantes"]:
+            estado = estudiante["estado"]
+            if estado == "Riesgo (Expulsion)" or estado == "Riesgo (condicional)":
+                print (" *********************************** ")
+                print(f"\n ID: {estudiante['identificacion']}")
+                print(f" Nombres: {estudiante['nombres']}")
+                print(f"Apellidos: {estudiante['apellidos']}")
+                print ("\n ///////////////////////////////////// ")
+                print(f"\n Estado: {estudiante['estado']}")
+                print("")
