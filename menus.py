@@ -56,7 +56,7 @@ def Menu_Trainer ():
     
 def Menu_Estudiantes() : 
     print("╔════════════════════════════════════╗".center(120))
-    print("║           MENÚ ESTUDIANTE          ║".center(120))
+    print("║           MENÚ CAMPER              ║".center(120))
     print("╠════════════════════════════════════╣".center(120))
     print("║ 1. Ver Mi Curso                    ║".center(120))
     print("║ 2. Ver Mis Notas                   ║".center(120))
