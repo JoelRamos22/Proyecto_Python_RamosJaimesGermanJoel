@@ -35,16 +35,11 @@ Archivos Json** :
 *la permanencia de datos es necesaria para poder mantener un buen funcionamiento del codigo *
 
 ------------
+
 ### Main.py 
 </p> Aqui estara nuestro codigo principal junto con un bucle while, todos los import necesarios. 
 Ejemplo : 
 ```python
-import menus 
-import coordinador
-import trainer
-import campers
-import Listados
-
 while True: 
     try: 
         opc = menus.Menu_Principal() 
@@ -72,11 +67,7 @@ while True:
         print ("")
         print (" ERROR INGRESE UNA OPCION VALIDAD " )
         print ("") 
-        continue 
-
-```
-
-
+        continue ```
 ------------
 
 ### Menus.py 
@@ -332,11 +323,6 @@ def CrearModulos():
 ### Campers.py 
 </p> Los camper no podran modificar ni cambiar ningun valor en el codigo, solamente podran consultar informacion, su estado, sus notas, sus cursos no contaran con mas opciones. 
 Ejemplo : 
-
-## Permanencia de datos JSON :tw-1f4c0:
-</p> Para el correcto funcionamiento del codigo se necesita una permanencia de datos, para esto usaremos archivos json, con una estructura bastante similar pero con distintos cambios cada una, esto para poder manejar de mejor forma los datos en el codigo tomando asi mucho menos tiempo su manipulacion :tw-26a1:.
-
-Un Ejemplo de los json usados podria ser el json para guardar las notas de los grupos creados : 
 ```python
 def Info(): 
     with open ('salones.json', 'r') as json_file: 
@@ -371,6 +357,13 @@ def Info():
                                 print (f"{key} : {val}")
                             break  
 ```
+------------
+
+## Permanencia de datos JSON :tw-1f4c0:
+</p> Para el correcto funcionamiento del codigo se necesita una permanencia de datos, para esto usaremos archivos json, con una estructura bastante similar pero con distintos cambios cada una, esto para poder manejar de mejor forma los datos en el codigo tomando asi mucho menos tiempo su manipulacion :tw-26a1:.
+
+Un Ejemplo de los json usados podria ser el json para guardar las notas de los grupos creados : 
+
 
 ------------
 
@@ -405,7 +398,7 @@ def Info():
             "horario": "diurno",
             "Celular": "317819"
         },
-]
+
 ```
 
 ------------
