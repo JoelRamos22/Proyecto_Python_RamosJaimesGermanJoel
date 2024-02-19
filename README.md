@@ -35,10 +35,10 @@ Archivos Json** :
 *la permanencia de datos es necesaria para poder mantener un buen funcionamiento del codigo *
 
 ------------
-
 ### Main.py 
 </p> Aqui estara nuestro codigo principal junto con un bucle while, todos los import necesarios. 
 Ejemplo : 
+
 ```python
 while True: 
     try: 
@@ -67,7 +67,10 @@ while True:
         print ("")
         print (" ERROR INGRESE UNA OPCION VALIDAD " )
         print ("") 
-        continue ```
+        continue
+```
+
+
 ------------
 
 ### Menus.py 
@@ -134,10 +137,10 @@ def AsignarPruebasN():
 
 ------------
 
-##### IMPORTANTE  :crying_cat_face:: 
-*</p> * Todas las funciones con los modulos usan la misma estructura para acceder a cada opcion de su menu, esto con un bucle while para poder seleccionar una opcion de salida.* 
+##### * IMPORTANTE * :crying_cat_face:: 
+**</p> * Todas las funciones con los modulos usan la misma estructura para acceder a cada opcion de su menu, esto con un bucle while para poder seleccionar una opcion de salida.* 
 ejemplo : 
-*
+**
 ```python
 
 def Campers_Opciones(opciones) :
@@ -323,6 +326,7 @@ def CrearModulos():
 ### Campers.py 
 </p> Los camper no podran modificar ni cambiar ningun valor en el codigo, solamente podran consultar informacion, su estado, sus notas, sus cursos no contaran con mas opciones. 
 Ejemplo : 
+
 ```python
 def Info(): 
     with open ('salones.json', 'r') as json_file: 
@@ -357,16 +361,13 @@ def Info():
                                 print (f"{key} : {val}")
                             break  
 ```
+
 ------------
 
 ## Permanencia de datos JSON :balloon:
 </p> Para el correcto funcionamiento del codigo se necesita una permanencia de datos, para esto usaremos archivos json, con una estructura bastante similar pero con distintos cambios cada una, esto para poder manejar de mejor forma los datos en el codigo tomando asi mucho menos tiempo su manipulacion :tw-26a1:.
 
 Un Ejemplo de los json usados podria ser el json para guardar las notas de los grupos creados : 
-
-
-------------
-
 
 ```python
 [
@@ -404,4 +405,4 @@ Un Ejemplo de los json usados podria ser el json para guardar las notas de los g
 ------------
 
 ### MUCHAS GRACIAS :dvd::
-</p> Espero te haya podido ayudar a comprender mi codigo de una forma mucho mas sencilla, este es mi primer proyecto de python :joy_cat::
+</p> Espero te haya podido ayudar a comprender mi codigo de una forma mucho mas sencilla, este es mi primer proyecto de python :coffee::
