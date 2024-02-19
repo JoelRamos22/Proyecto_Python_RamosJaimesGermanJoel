@@ -134,10 +134,10 @@ def AsignarPruebasN():
 
 ------------
 
-##### * IMPORTANTE * :crying_cat_face:: 
-**</p> * Todas las funciones con los modulos usan la misma estructura para acceder a cada opcion de su menu, esto con un bucle while para poder seleccionar una opcion de salida.* 
+##### IMPORTANTE  :crying_cat_face:: 
+*</p> * Todas las funciones con los modulos usan la misma estructura para acceder a cada opcion de su menu, esto con un bucle while para poder seleccionar una opcion de salida.* 
 ejemplo : 
-**
+*
 ```python
 
 def Campers_Opciones(opciones) :
@@ -359,7 +359,7 @@ def Info():
 ```
 ------------
 
-## Permanencia de datos JSON :tw-1f4c0:
+## Permanencia de datos JSON :balloon:
 </p> Para el correcto funcionamiento del codigo se necesita una permanencia de datos, para esto usaremos archivos json, con una estructura bastante similar pero con distintos cambios cada una, esto para poder manejar de mejor forma los datos en el codigo tomando asi mucho menos tiempo su manipulacion :tw-26a1:.
 
 Un Ejemplo de los json usados podria ser el json para guardar las notas de los grupos creados : 
