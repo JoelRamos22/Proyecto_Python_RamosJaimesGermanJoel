@@ -1,6 +1,6 @@
 # Proyecto Python German Joel Ramos 
-</p> Aquí esta la informacion sobre mi proyecto, junto con instrucciones de como usarlo y una descripcion de su contenido :tw-1f640:. 
-## Requerimientos a cumplir :tw-1f4be:
+</p> Aquí esta la informacion sobre mi proyecto, junto con instrucciones de como usarlo y una descripcion de su contenido:smile::. 
+## Requerimientos a cumplir :alien::
 El programa de seguimiento académico para CampusLands permite registrar la información de los campers inscritos en su programa intensivo de programación. Además, gestiona las rutas de entrenamiento, asigna campers a trainers, registra notas, y genera reportes. Algunas características principales incluyen:
 
 - Registro de campers con información detallada.
@@ -14,7 +14,7 @@ El programa de seguimiento académico para CampusLands permite registrar la info
 
 ------------
 
-## Desarollo del proyecto :tw-1f4c3:
+## Desarollo del proyecto :congratulations::
 El trabajo era de punto de vista libre, por lo cual elegí enforcarlo como una plataforma de gestión de notas real, donde hay roles y cada uno tiene sus distintas funciones. Para poder darle este enfoque, fue necesario utilizar varios archivos, los cuales listaré a continuación de forma resumida.
 
 **modulos : **
@@ -34,12 +34,11 @@ Archivos Json** :
 ###### * Nota :* 
 *la permanencia de datos es necesaria para poder mantener un buen funcionamiento del codigo *
 
-
-
 ------------
 ### Main.py 
 </p> Aqui estara nuestro codigo principal junto con un bucle while, todos los import necesarios. 
 Ejemplo : 
+```python
 ```python
 import menus 
 import coordinador
@@ -76,6 +75,7 @@ while True:
         print ("") 
         continue 
 
+```
 ```
 
 ------------
@@ -160,7 +160,7 @@ def Registrar_Estudiantes() :
 
 ------------
 
-##### * IMPORTANTE * :tw-261d:: 
+##### * IMPORTANTE * :crying_cat_face:: 
 **</p> * Todas las funciones con los modulos usan la misma estructura para acceder a cada opcion de su menu, esto con un bucle while para poder seleccionar una opcion de salida.* 
 ejemplo : 
 **
@@ -439,5 +439,5 @@ Un Ejemplo de los json usados podria ser el json para guardar las notas de los g
 
 ------------
 
-### MUCHAS GRACIAS :tw-1f525:
-</p> Espero te haya podido ayudar a comprender mi codigo de una forma mucho mas sencilla, este es mi primer proyecto de python :tw-1f604:
+### MUCHAS GRACIAS :dvd::
+</p> Espero te haya podido ayudar a comprender mi codigo de una forma mucho mas sencilla, este es mi primer proyecto de python :joy_cat::
