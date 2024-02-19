@@ -3,7 +3,7 @@
  
 ------------
 
-## Requerimientos a cumplir :alien::
+## Requerimientos a cumplir :floppy_disk::
 El programa de seguimiento académico para CampusLands permite registrar la información de los campers inscritos en su programa intensivo de programación. Además, gestiona las rutas de entrenamiento, asigna campers a trainers, registra notas, y genera reportes. Algunas características principales incluyen:
 
 - Registro de campers con información detallada.
