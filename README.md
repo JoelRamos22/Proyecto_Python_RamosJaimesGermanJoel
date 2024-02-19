@@ -108,52 +108,36 @@ def Menu_Principal():
 ### Coordinador.py 
 Con este modulo se cumpliran la mayoria de requisitos, ya que este contara con la opcion de las matriculas, añadir estudiantes, añadir trainer, registrar notas de la prueba inicial... etc todo esto mediante funciones para poder manejar mas facil su entendimiento, se utiliza un bucle while en casi todas las funciones para no obligar al usuario a salir y volver a entrar a la opcion cada vez que quiera modificar algo. 
 Ejemplo : 
+
 ```python
-def Registrar_Estudiantes() : 
-    with open ('estudiantes.json', 'r') as estudiantes_file : 
-        data_estudiantes = json.load(estudiantes_file)
-    print ("")    
-    print (" ¿ Desea añadir algun estudiante ? ".rjust(20))
+def AsignarPruebasN(): 
+    with open('estudiantes.json', 'r') as estudiantes_file: 
+        estudiantes_data = json.load(estudiantes_file)
+    
+    for estudiante in estudiantes_data[1]['estudiantesInscritos'] : 
+        print(" ═══════════════════════════════════════════════════════".rjust(20))
+        print(f"      Ingrese la nota del estudiante: {estudiante['nombres']}".rjust(20))
+        print(" ═══════════════════════════════════════════════════════".rjust(20))
+        print ("")
+        while True:
+            prueba = int(input(" Nota (0-100): ".rjust(20)))
+            print ("")
+            if 0 <= prueba <= 100:
+                estudiante['Prueba'] = prueba
+                break
+            else:
+                print(" Por favor, ingrese una nota válida (entre 0 y 100):".rjust(20))
+                print("")
+        if prueba > 60 : 
+            print ("")
+            print (" El estudiante ha pasado la prueba de registro ".rjust(20))
+            estudiante['estado'] = "Aprobado"
+            
+    with open('estudiantes.json', 'w') as estudiantes_file: 
+        json.dump(estudiantes_data, estudiantes_file, indent=4)
     print ("")
+    print (" Las notas de la prueba han sido añadidas exitosamente ".rjust(20))
     print ("=====================================".rjust(20))
-    print ("")
-    while True :
-        respuesta = input (" si o no : ".rjust(20))
-        if respuesta.lower() == "si" : 
-            print ("")
-            print ("=====================================".rjust(20))
-            print ("")
-            print (" Ingrese los datos del estudiante".rjust(20))
-            print ("")
-            print ("=====================================".rjust(20))
-            print ("")
-            Estudiante = {
-                'identificacion' : (int(input("identificacion : "))),
-                'nombres' : input("nombres : "),
-                'apellidos' : input("apellidos : "),
-                'direccion' : input("direccion : "),
-                'acudiente' : input("acudiente : "),
-                'telefonos' : { 
-                        'celular' : input("celular : "),
-                        'fijo' : input("fijo : ")
-                        }
-                }
-            data_estudiantes[1]["estudiantesInscritos"].append(Estudiante) 
-            
-            with open ('estudiantes.json', 'w') as estudiantes_file :
-                json.dump(data_estudiantes, estudiantes_file, indent=4)
-            
-            print ("") 
-            print (" ESTUDIANTE AÑADIDO CON EXITO ".rjust(20))
-                
-            print ("")
-            print ("=====================================".rjust(20))
-            print ("")
-            print (" ¿ Desea añadir otro estudiante ?".rjust(20))
-            print ("")
-        elif respuesta.lower() == "no": 
-            print (" Volviendo al menu...".rjust(20))
-            break
     return
 ```
 
@@ -348,6 +332,11 @@ def CrearModulos():
 ### Campers.py 
 </p> Los camper no podran modificar ni cambiar ningun valor en el codigo, solamente podran consultar informacion, su estado, sus notas, sus cursos no contaran con mas opciones. 
 Ejemplo : 
+
+## Permanencia de datos JSON :tw-1f4c0:
+</p> Para el correcto funcionamiento del codigo se necesita una permanencia de datos, para esto usaremos archivos json, con una estructura bastante similar pero con distintos cambios cada una, esto para poder manejar de mejor forma los datos en el codigo tomando asi mucho menos tiempo su manipulacion :tw-26a1:.
+
+Un Ejemplo de los json usados podria ser el json para guardar las notas de los grupos creados : 
 ```python
 def Info(): 
     with open ('salones.json', 'r') as json_file: 
@@ -381,28 +370,11 @@ def Info():
                             for key, val  in grupo['trainer'].items() :
                                 print (f"{key} : {val}")
                             break  
-            if (Camper_Encontrado == False) :
-                print ("")
-                print (" ======================================= ")
-                print ("")
-                print ("     Informacion camper No encontrada     ")
-                print ("")
-                print (" ======================================== ")
-                print ("") 
-                return
-        else : 
-            print ("")
-            print (" Volviendo al menu... ")
-            print ("")
-            break
 ```
 
 ------------
 
-## Permanencia de datos JSON :tw-1f4c0:
-</p> Para el correcto funcionamiento del codigo se necesita una permanencia de datos, para esto usaremos archivos json, con una estructura bastante similar pero con distintos cambios cada una, esto para poder manejar de mejor forma los datos en el codigo tomando asi mucho menos tiempo su manipulacion :tw-26a1:.
 
-Un Ejemplo de los json usados podria ser el json para guardar las notas de los grupos creados : 
 ```python
 [
     {
