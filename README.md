@@ -17,7 +17,7 @@ El programa de seguimiento académico para CampusLands permite registrar la info
 
 ------------
 
-## Desarollo del proyecto:
+## Desarollo del proyecto :page_with_curl: :
 El trabajo era de punto de vista libre, por lo cual elegí enforcarlo como una plataforma de gestión de notas real, donde hay roles y cada uno tiene sus distintas funciones. Para poder darle este enfoque, fue necesario utilizar varios archivos, los cuales listaré a continuación de forma resumida.
 
 **modulos : **
@@ -34,7 +34,7 @@ Archivos Json** :
 - Estudiantes.json
 - Trainer.json
 
-###### * Nota :* 
+###### * Nota :books: :* 
 *la permanencia de datos es necesaria para poder mantener un buen funcionamiento del codigo *
 
 ------------
@@ -321,7 +321,7 @@ def CrearModulos():
         json.dump(data_notas, notas_file, indent=4)
     return
 ```
-*Nota: *
+*Nota: :books: *
 </p> * En el modulo de matriculas se crea un grupo al cual se le podra asignar nuevos modulos por el trainer, cada grupo contiene fecha de finalizacion, fecha de inicio, nombre del grupo, trainer, estudiantes y etc...*
 
 ------------
