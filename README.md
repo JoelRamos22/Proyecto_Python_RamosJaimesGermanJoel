@@ -1,6 +1,6 @@
 # Proyecto Python German Joel Ramos 
-</p> Aquí esta la informacion sobre mi proyecto, junto con instrucciones de como usarlo y una descripcion de su contenido:smile::
-
+</p> Aquí esta la informacion sobre mi proyecto, junto con instrucciones de como usarlo y una descripcion de su contenido :smile: .
+ 
 ------------
 
 ## Requerimientos a cumplir :alien::
@@ -408,4 +408,4 @@ Un Ejemplo de los json usados podria ser el json para guardar las notas de los g
 ------------
 
 ### MUCHAS GRACIAS :dvd::
-</p> Espero te haya podido ayudar a comprender mi codigo de una forma mucho mas sencilla, este es mi primer proyecto de python :coffee::
+</p> Espero que esto te haya podido ayudar a comprender mi codigo de una forma mucho mas sencilla, este es mi primer proyecto :coffee: .
