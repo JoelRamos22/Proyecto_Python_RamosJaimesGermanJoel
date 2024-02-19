@@ -1,4 +1,5 @@
-y una descripcion de su contenido:smile::. 
+# Proyecto Python German Joel Ramos 
+</p> Aquí esta la informacion sobre mi proyecto, junto con instrucciones de como usarlo y una descripcion de su contenido:smile::
 ## Requerimientos a cumplir :alien::
 El programa de seguimiento académico para CampusLands permite registrar la información de los campers inscritos en su programa intensivo de programación. Además, gestiona las rutas de entrenamiento, asigna campers a trainers, registra notas, y genera reportes. Algunas características principales incluyen:
 
@@ -13,7 +14,7 @@ El programa de seguimiento académico para CampusLands permite registrar la info
 
 ------------
 
-## Desarollo del proyecto :ballon::
+## Desarollo del proyecto:
 El trabajo era de punto de vista libre, por lo cual elegí enforcarlo como una plataforma de gestión de notas real, donde hay roles y cada uno tiene sus distintas funciones. Para poder darle este enfoque, fue necesario utilizar varios archivos, los cuales listaré a continuación de forma resumida.
 
 **modulos : **
@@ -37,7 +38,6 @@ Archivos Json** :
 ### Main.py 
 </p> Aqui estara nuestro codigo principal junto con un bucle while, todos los import necesarios. 
 Ejemplo : 
-```python
 ```python
 import menus 
 import coordinador
