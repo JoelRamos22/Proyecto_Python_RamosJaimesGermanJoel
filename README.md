@@ -140,7 +140,7 @@ def AsignarPruebasN():
 
 ------------
 
-##### * IMPORTANTE * :crying_cat_face:: 
+##### * IMPORTANTE * :point_up:: 
 **</p> * Todas las funciones con los modulos usan la misma estructura para acceder a cada opcion de su menu, esto con un bucle while para poder seleccionar una opcion de salida.* 
 ejemplo : 
 **
