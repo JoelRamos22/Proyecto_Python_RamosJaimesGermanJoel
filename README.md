@@ -14,7 +14,7 @@ El programa de seguimiento académico para CampusLands permite registrar la info
 
 ------------
 
-## Desarollo del proyecto :congratulations::
+## Desarollo del proyecto :balloon::
 El trabajo era de punto de vista libre, por lo cual elegí enforcarlo como una plataforma de gestión de notas real, donde hay roles y cada uno tiene sus distintas funciones. Para poder darle este enfoque, fue necesario utilizar varios archivos, los cuales listaré a continuación de forma resumida.
 
 **modulos : **
@@ -38,7 +38,6 @@ Archivos Json** :
 ### Main.py 
 </p> Aqui estara nuestro codigo principal junto con un bucle while, todos los import necesarios. 
 Ejemplo : 
-```python
 ```python
 import menus 
 import coordinador
@@ -75,7 +74,6 @@ while True:
         print ("") 
         continue 
 
-```
 ```
 
 ------------
